@@ -9,6 +9,8 @@ class FileAPI extends Base {
 	 * Initialize
 	 */
 	public function __construct($file_path){
+		if(!is_dir($file_path))
+			mkdir($file_path);
 		$this->file_path = $file_path;
 	}
 
