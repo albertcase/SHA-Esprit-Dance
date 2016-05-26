@@ -19,7 +19,7 @@ class WebServiceController extends Controller {
 		
 		if(!$file) {
 			$code = array('success' => '0', 'error_code' => '12', 'error_msg' => 'failed to create file');
-			$this->watchdog('saveFile', json_encode($code));
+			$this->watchdog('saveFile', json_encode($code, JSON_UNESCAPED_UNICODE));
 			$this->dataPrint($code);
 		}
 
@@ -36,15 +36,16 @@ class WebServiceController extends Controller {
 		$param = array(
 			'video_url' => $video_url,
 			'page_url' => $page_url,
-			);var_dump($param);exit;
+			);
 		$query = http_build_query($param);
 		$url = QRG_HOST . 'index.php/Index/upload_is_done?' . $query;
 		$re = json_decode(file_get_contents($url));
 		if($re->success) {
+			$this->watchdog('generateQR', json_encode($re, JSON_UNESCAPED_UNICODE));
 			$DatabaseAPI = new \Lib\DatabaseAPI();
 			$DatabaseAPI->updateVideo($file);
 		} else {
-			$this->watchdog('generateQR', json_encode($re));
+			$this->watchdog('generateQR', json_encode($re, JSON_UNESCAPED_UNICODE));
 		}
 		
 	}

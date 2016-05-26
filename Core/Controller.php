@@ -43,5 +43,8 @@ class Controller {
 		return $RedisAPI->getAccessToken();
 	}
 
-
+	public function watchdog($type, $data) {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$DatabaseAPI->watchdog($type, $data);
+	}
 }

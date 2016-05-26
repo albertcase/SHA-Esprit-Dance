@@ -13,13 +13,14 @@ class DatabaseAPI {
 	public function __construct(){
 		$connect = new \mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 		$this->db = $connect;
+		$this->db->query('SET NAMES UTF8');
 	}
 
 	public function watchdog($type, $data){
 		$nowtime = NOWTIME;
 		$sql = "INSERT INTO `watchdog` SET `type` = ?, `data` = ?, `created` = ?"; 
 		$res = $this->db->prepare($sql); 
-		$res->bind_param("sss", $type, $data);
+		$res->bind_param("sss", $type, $data, $nowtime);
 		if($res->execute()) 
 			return $res->insert_id;
 		else 
