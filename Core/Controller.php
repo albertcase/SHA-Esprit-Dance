@@ -42,4 +42,6 @@ class Controller {
 		$RedisAPI = new \Lib\RedisAPI();
 		return $RedisAPI->getAccessToken();
 	}
+
+
 }

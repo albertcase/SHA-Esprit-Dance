@@ -2,7 +2,7 @@
 
 	$uri = 'http://192.168.8.101:9201/webservice/file';
 
-	$data = base64_encode(file_get_contents('/vagrant/4.png'));
+	$data = file_get_contents('/vagrant/4.png');
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $uri);
