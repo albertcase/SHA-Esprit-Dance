@@ -4,7 +4,7 @@
 define("REDIS_HOST", '127.0.0.1');
 define("REDIS_PORT", '6379');
 
-define("BASE_URL", 'http://????????????????/');
+define("BASE_URL", 'http://127.0.0.1:9201/');
 define("TEMPLATE_ROOT", dirname(__FILE__) . '/../template');
 //Wechat config info
 define("TOKEN", '????');

@@ -29,32 +29,34 @@ class WebServiceController extends Controller {
 	}
 
 	public function generateQRCode($file) {
-		$video_url = $this->generateFileURL($file);
-		$page_url = $this->generatePageURL($file);
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$video = $DatabaseAPI->createVideo($file);
+		$video_url = $this->generateVideoURL($video->fid);
+		$page_url = $this->generatePageURL($video->vid);
 		$param = array(
 			'video_url' => $video_url,
 			'page_url' => $page_url,
-			);
+			);var_dump($param);exit;
 		$query = http_build_query($param);
 		$url = QRG_HOST . 'index.php/Index/upload_is_done?' . $query;
 		$re = json_decode(file_get_contents($url));
 		if($re->success) {
 			$DatabaseAPI = new \Lib\DatabaseAPI();
-			$DatabaseAPI->updateVideo($fid);
+			$DatabaseAPI->updateVideo($file);
 		} else {
 			$this->watchdog('generateQR', json_encode($re));
 		}
 		
 	}
 
-	public function generatePageURL($file) {
-		$vid = md5($file->fid);
-		$url = BASE_URL . '/vid/' . $vid;
+	public function generatePageURL($vid) {
+		$vid = md5($vid);
+		$url = BASE_URL . 'video/' . $vid;
 		return $url;
 	}
 
-	public function generateFileURL($file) {
-		$url = BASE_URL . '/files/' . $file->filename;
+	public function generateVideoURL($fid) {
+		$url = BASE_URL . 'files/' . $fid;
 		return $url;
 	}
 

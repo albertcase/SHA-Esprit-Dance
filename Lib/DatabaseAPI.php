@@ -32,7 +32,7 @@ class DatabaseAPI {
 		$res = $this->db->prepare($sql); 
 		$res->bind_param("ss", $filename, $nowtime);
 		if($res->execute()) 
-			return findFileByFid($res->insert_id);
+			return $this->findFileByFid($res->insert_id);
 		else 
 			return FALSE;
 	}
@@ -44,31 +44,46 @@ class DatabaseAPI {
 		$res->execute();
 		$res->bind_result($fid, $filename);
 		if($res->fetch()) {
-			$file = new stdClass();
-			$user->fid = $fid;
-			$user->filename = $filename;
+			$file = new \stdClass();
+			$file->fid = $fid;
+			$file->filename = $filename;
 			return $file;
 		}
 		return NULL;
 	}
 
-	public function createVideo($fid){
+	public function createVideo($file){
 		$nowtime = NOWTIME;
-		$sql = "INSERT INTO `video` SET `fid` = ?, `status` = ?, `created` = ?"; 
+		$sql = "INSERT INTO `video` SET `fid` = ?, `status` = 0, `created` = ?"; 
 		$res = $this->db->prepare($sql); 
-		$res->bind_param("sss", $fid, 0, $nowtime);
+		$res->bind_param("ss", $file->fid, $nowtime);
 		if($res->execute()) 
-			return $res->insert_id;
+			return $this->findVideoByVid($res->insert_id);
 		else 
 			return FALSE;
 	}
 
-	public function updateVideo($fid){
-		$sql = "UPDATE `video` SET `status` = ? WHERE `fid` = ?"; 
+	public function findVideoByVid($vid){
+		$sql = "SELECT `vid`, `fid` FROM `video` WHERE `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $vid);
+		$res->execute();
+		$res->bind_result($vid, $fid);
+		if($res->fetch()) {
+			$video = new \stdClass();
+			$video->vid = $vid;
+			$video->fid = $fid;
+			return $video;
+		}
+		return NULL;
+	}
+
+	public function updateVideo($file){
+		$sql = "UPDATE `video` SET `status` = 1 WHERE `fid` = ?"; 
 		$res = $this->db->prepare($sql); 
-		$res->bind_param("ss", 1, $fid);
+		$res->bind_param("s", $file->fid);
 		if($res->execute()) 
-			return $fid;
+			return $file;
 		else 
 			return FALSE;
 	}

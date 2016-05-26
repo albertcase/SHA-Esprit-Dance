@@ -1,6 +1,6 @@
 <?php
 
-	$uri = 'http://192.168.8.101:9201/webservice/file';
+	$uri = 'http://192.168.8.101:9201/webservice/upload';
 
 	$data = file_get_contents('/vagrant/4.png');
 

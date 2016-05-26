@@ -2,7 +2,7 @@
 
 $routers = array();
 $routers['/api'] = array('EspritBundle\Api', 'api');
-$routers['/webservice/file'] = array('EspritBundle\WebService', 'uploadFile');
+$routers['/webservice/upload'] = array('EspritBundle\WebService', 'uploadFile');
 $routers['/wechat/ws/test/%/aa/%'] = array('WechatBundle\Api', 'test');
 $routers['/wechat/ws/oauth2'] = array('WechatBundle\WebService', 'oauth');
 $routers['/wechat/ws/callback'] = array('WechatBundle\WebService', 'callback');
