@@ -1,0 +1,10 @@
+<?php
+
+$routers = array();
+$routers['/api'] = array('EspritBundle\Api', 'api');
+$routers['/webservice/file'] = array('EspritBundle\WebService', 'uploadFile');
+$routers['/wechat/ws/test/%/aa/%'] = array('WechatBundle\Api', 'test');
+$routers['/wechat/ws/oauth2'] = array('WechatBundle\WebService', 'oauth');
+$routers['/wechat/ws/callback'] = array('WechatBundle\WebService', 'callback');
+$routers['/wechat/ws/jssdk/config/webservice'] = array('WechatBundle\WebService', 'jssdkConfigWebService');
+$routers['/wechat/ws/jssdk/config/js'] = array('WechatBundle\WebService', 'jssdkConfigJs');
