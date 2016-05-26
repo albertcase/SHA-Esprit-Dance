@@ -41,7 +41,7 @@ class WebServiceController extends Controller {
 		$url = QRG_HOST . 'index.php/Index/upload_is_done?' . $query;
 		$re = json_decode(file_get_contents($url));
 		if($re->success) {
-			$this->watchdog('generateQR', json_encode($re, JSON_UNESCAPED_UNICODE));
+			// $this->watchdog('generateQR', json_encode($re, JSON_UNESCAPED_UNICODE));
 			$DatabaseAPI = new \Lib\DatabaseAPI();
 			$DatabaseAPI->updateVideo($file);
 		} else {
