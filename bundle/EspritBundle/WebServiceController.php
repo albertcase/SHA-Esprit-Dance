@@ -63,7 +63,7 @@ class WebServiceController extends Controller {
 
 	public function generateFileName() {
 		$filename = time();
-		$filename = "{$filename}.png";
+		$filename = "{$filename}.mp4";
 		return $filename;
 	}	
 }
