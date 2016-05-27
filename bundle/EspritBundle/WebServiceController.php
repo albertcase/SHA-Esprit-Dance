@@ -33,8 +33,6 @@ class WebServiceController extends Controller {
 		$video = $DatabaseAPI->createVideo($file);
 		$video_url = $this->generateVideoURL($video->fid);
 		$page_url = $this->generatePageURL($video->vid);
-		var_dump($video_url);
-		var_dump($page_url);exit;
 		$param = array(
 			'video_url' => $video_url,
 			'page_url' => $page_url,
