@@ -37,7 +37,6 @@ class WebServiceController extends Controller {
 			'video_url' => $video_url,
 			'page_url' => $page_url,
 			);
-		var_dump($param);exit;
 		$query = http_build_query($param);
 		$url = QRG_HOST . 'index.php/Index/upload_is_done?' . $query;
 		$re = json_decode(file_get_contents($url));
