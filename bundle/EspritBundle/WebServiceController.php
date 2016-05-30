@@ -32,11 +32,12 @@ class WebServiceController extends Controller {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$video = $DatabaseAPI->createVideo($file);
 		$video_url = $this->generateVideoURL($video->fid);
-		$page_url = $this->generatePageURL($video->vid);
+		$page_url = $this->generatePageURL($video->id);
 		$param = array(
 			'video_url' => $video_url,
 			'page_url' => $page_url,
 			);
+		var_dump($param);exit;
 		$query = http_build_query($param);
 		$url = QRG_HOST . 'index.php/Index/upload_is_done?' . $query;
 		$re = json_decode(file_get_contents($url));
@@ -50,9 +51,8 @@ class WebServiceController extends Controller {
 		
 	}
 
-	public function generatePageURL($vid) {
-		$vid = md5($vid);
-		$url = BASE_URL . 'video/' . $vid;
+	public function generatePageURL($id) {
+		$url = BASE_URL . 'video/' . $id;
 		return $url;
 	}
 

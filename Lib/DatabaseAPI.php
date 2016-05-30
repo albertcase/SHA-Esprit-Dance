@@ -55,9 +55,10 @@ class DatabaseAPI {
 
 	public function createVideo($file){
 		$nowtime = NOWTIME;
-		$sql = "INSERT INTO `video` SET `fid` = ?, `status` = 0, `created` = ?"; 
+		$id = md5($file->fid . $nowtime);
+		$sql = "INSERT INTO `video` SET `fid` = ?, `status` = 0, `id` = ?, `created` = ?"; 
 		$res = $this->db->prepare($sql); 
-		$res->bind_param("ss", $file->fid, $nowtime);
+		$res->bind_param("sss", $file->fid, $id, $nowtime);
 		if($res->execute()) 
 			return $this->findVideoByVid($res->insert_id);
 		else 
@@ -65,15 +66,16 @@ class DatabaseAPI {
 	}
 
 	public function findVideoByVid($vid){
-		$sql = "SELECT `vid`, `fid` FROM `video` WHERE `vid` = ?"; 
+		$sql = "SELECT `vid`, `fid`, `id` FROM `video` WHERE `vid` = ?"; 
 		$res = $this->db->prepare($sql);
 		$res->bind_param("s", $vid);
 		$res->execute();
-		$res->bind_result($vid, $fid);
+		$res->bind_result($vid, $fid, $id);
 		if($res->fetch()) {
 			$video = new \stdClass();
 			$video->vid = $vid;
 			$video->fid = $fid;
+			$video->id = $id;
 			return $video;
 		}
 		return NULL;
