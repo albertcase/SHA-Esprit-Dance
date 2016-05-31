@@ -11,4 +11,12 @@ class SiteController extends Controller {
 		exit;
 	}
 
+	public function videoAction($id) {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$video = $DatabaseAPI->findVideoById($id);
+		$file = $DatabaseAPI->findFileByFid($video->fid);
+		$this->render('video', array('url' => $file->filename, 'vid' => $video->vid));
+		exit;
+	}
+
 }
