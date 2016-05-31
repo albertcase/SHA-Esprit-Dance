@@ -17,14 +17,56 @@
 	<meta name="Keywords" content="">
 	<meta name="Description" content="...">
 
-	<script data-main="../js/config" src="../js/require.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="src/style/reset.css">
+	<script data-main="src/js/config" src="src/js/require.js"></script>
+	
 
 </head>
 <body>
 
-<div id="dreambox" class="index">
+<div class="loading">
+	<div class="cssload-loader">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
 
+<div id="dreambox">
+	<img src="src/img/logo.png" width="100%" class="logo" />
+
+	<div class="section" id="home">
+		<div class="kv">
+			<img src="src/img/kv.jpg" width="100%" />
+		</div>
+
+		<div class="form">
+			<ul>
+				<li>
+					<div class="inputTextStyle phone w60">
+						<input type="tel" maxlength="11" placeholder="手机号码">
+					</div>
+					<a href="javascript:;" class="btn w27"><i>获取验证码</i></a>
+				</li>
+				<li>
+					<div class="inputTextStyle lock">
+						<input type="text" placeholder="验证码">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
 </div>
 
 
