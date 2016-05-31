@@ -12,8 +12,9 @@ class SiteController extends Controller {
 	}
 
 	public function videoAction($id) {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$video = $DatabaseAPI->findVideoById($id);
-		echo $video->fid;
+		var_dump($video);
 		exit;
 	}
 
