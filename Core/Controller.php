@@ -31,7 +31,7 @@ class Controller {
 		$this->Response()->redirect($uri);
 	}
 
-	public function render($tpl_name, $params) {
+	public function render($tpl_name, $params = array()) {
 		$template = new Theme();
 		$data = $template->theme($tpl_name, $params);
 		$response = new Response($data);
