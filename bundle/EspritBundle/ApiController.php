@@ -5,7 +5,7 @@ use Core\Controller;
 
 
 class ApiController extends Controller {
-
+	
 	public function apiAction() {
 		$url = "http://127.0.0.1/webservice/upload";
 		$ch = curl_init();
