@@ -1,0 +1,2 @@
+<?php echo $url;?>
+<?php echo $vid;?>
