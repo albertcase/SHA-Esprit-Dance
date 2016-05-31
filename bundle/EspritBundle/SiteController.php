@@ -11,4 +11,10 @@ class SiteController extends Controller {
 		exit;
 	}
 
+	public function videoAction($id) {
+		$video = $DatabaseAPI->findVideoById($id);
+		echo $video->fid;
+		exit;
+	}
+
 }

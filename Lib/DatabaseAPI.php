@@ -81,6 +81,22 @@ class DatabaseAPI {
 		return NULL;
 	}
 
+	public function findVideoById($id){
+		$sql = "SELECT `vid`, `fid`, `id` FROM `video` WHERE `id` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $id);
+		$res->execute();
+		$res->bind_result($vid, $fid, $id);
+		if($res->fetch()) {
+			$video = new \stdClass();
+			$video->vid = $vid;
+			$video->fid = $fid;
+			$video->id = $id;
+			return $video;
+		}
+		return NULL;
+	}
+
 	public function updateVideo($file){
 		$sql = "UPDATE `video` SET `status` = 1 WHERE `fid` = ?"; 
 		$res = $this->db->prepare($sql); 
