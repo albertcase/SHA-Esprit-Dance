@@ -48,6 +48,10 @@ define(function(require, exports, module) {
                 $(".vposter").show();
             }
         });  
+    },
+    pageChange: function(a){
+        $(".section").removeClass("active");
+        $("#"+a).addClass("active");
     }  
 
   }

@@ -6,7 +6,7 @@ use Core\Controller;
 
 class SiteController extends Controller {
 
-	public function indexAction() {
+	public function indexAction($id) {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$video = $DatabaseAPI->findVideoById($id);
 		$file = $DatabaseAPI->findFileByFid($video->fid);

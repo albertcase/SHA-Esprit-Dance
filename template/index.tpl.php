@@ -17,12 +17,18 @@
 	<meta name="Keywords" content="">
 	<meta name="Description" content="...">
 
-	<link rel="stylesheet" type="text/css" href="src/style/reset.css">
-	<script data-main="src/js/config" src="src/js/require.js"></script>
+	<link rel="stylesheet" type="text/css" href="/src/style/reset.css">
+	<script type="text/javascript">
+		var vid = <?php echo $vid;?>,
+			vsrc = "/files/<?php echo $url;?>";
+	</script>
+	<script data-main="/src/js/config" src="/src/js/require.js"></script>
 	
 
 </head>
 <body>
+
+<!-- http://192.168.8.115:9201/video/d12349534fde6881200427840cf2d6fd -->
 
 <div class="loading">
 	<div class="cssload-loader">
@@ -35,11 +41,11 @@
 </div>
 
 <div id="dreambox">
-	<img src="src/img/logo.png" width="100%" class="logo" />
+	<img src="/src/img/logo.png" width="100%" class="logo" />
 
-	<div class="section" id="home">
+	<div class="section active" id="home">
 		<div class="kv">
-			<img src="src/img/kv.jpg" width="100%" />
+			<img src="/src/img/kv.jpg" width="100%" />
 		</div>
 
 		<div class="form">
@@ -63,13 +69,13 @@
 	</div>
 
 
-	<div class="section active" id="video">
+	<div class="section" id="video">
 		<h2>
-			#Dance with Esprit#<?php echo $vid;?>
+			#Dance with Esprit# 
 	    </h2>
 	    <div class="videoArea">
-	    	<div class="videoCon" data-url="/files/<?php echo $url;?>">
-	    		<img src="src/img/poster.jpg" width="100%" />
+	    	<div class="videoCon">
+	    		<img src="/src/img/poster.jpg" width="100%" />
 	    	</div>
 	    	<div class="videoFoot">
 	    		<a href="javascript:;" id="dznum">620000</a>

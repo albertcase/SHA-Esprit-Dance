@@ -40,7 +40,7 @@ require(['jquery', 'form'], function($, f) {
 		f.check(telInput, codesInput, $(this));
 	})
 
-	f.video(".videoCon", "http://espritdance.samesamechina.com/files/1464579297.mp4", "src/img/poster.jpg");
+	f.video(".videoCon", vsrc, "/src/img/poster.jpg");
 
 
 	$("#dianzan").on("click", function(){

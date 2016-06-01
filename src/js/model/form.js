@@ -20,6 +20,8 @@ define(["_public"],function(_p) {
   		}else{
   			console.log("提交成功！");
   			s.removeClass("disable");
+
+  			_p.pageChange("video");
   		}
     },
     video: function(a, b, c){
