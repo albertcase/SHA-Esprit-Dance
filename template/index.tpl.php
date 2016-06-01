@@ -48,16 +48,58 @@
 					<div class="inputTextStyle phone w60">
 						<input type="tel" maxlength="11" placeholder="手机号码">
 					</div>
-					<a href="javascript:;" class="btn w27"><i>获取验证码</i></a>
+					<a href="javascript:;" class="btn w27" id="getCodes"><i>获取验证码</i></a>
 				</li>
 				<li>
 					<div class="inputTextStyle lock">
-						<input type="text" placeholder="验证码">
+						<input type="text" class="codesInput" maxlength="6" placeholder="验证码">
 					</div>
+				</li>
+				<li>
+					<a href="javascript:;" class="btn" id="submit_btn"><i>确 认</i></a>
 				</li>
 			</ul>
 		</div>
 	</div>
+
+
+	<div class="section active" id="video">
+		<h2>
+			#Dance with Esprit#<?php echo $vid;?>
+	    </h2>
+	    <div class="videoArea">
+	    	<div class="videoCon" data-url="/files/<?php echo $url;?>">
+	    		<img src="src/img/poster.jpg" width="100%" />
+	    	</div>
+	    	<div class="videoFoot">
+	    		<a href="javascript:;" id="dznum">620000</a>
+	    	</div>
+	    </div>
+	    <?php if($ismy) {
+	    ?>
+	    <div class="videoHotArea">
+	    	<h3>
+	    		邀请好友点亮爱心<br>
+				“赞”助我的超值大礼
+	    	</h3>
+	    	<a href="javascript:;" class="btn w50"><i>分 享</i></a>
+	    </div>
+	    <?php
+	    } else {?>
+
+	    <div class="videoHotArea">
+	    	<h3>
+	    		快帮好友点亮爱心<br>
+				“赞”助TA的超值大礼
+	    	</h3>
+	    	<a href="javascript:;" class="btn w50" id="dianzan"><i>点 赞</i></a>
+	    </div>
+	    <?php
+	    }?>
+	</div>
+
+
+
 </div>
 
 
