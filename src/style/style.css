@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+#dreambox{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo{
+    width: 100%;
+    display: inline-block;
+    margin: 15% 0;
+}
+
+.section{
+    width: 100%;
+    height: 75%;
+    text-align: center;
+    display: none;
+}
+
+.section.active{
+    display: inline-block;
+}
+
+.kv{
+    width: 90%;
+    display: inline-block;
+}
+
+.form{
+    width: 82%;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 10% 0;
+}
+
+.form ul, .form li{
+    width: 100%;
+    display: inline-block;
+}
+
+.form li{
+    margin: 2% 0;
+}
+
+.inputTextStyle{
+    width: 100%;
+    border:2px #ba0c2f solid;
+    float: left;
+    display: inline-block;
+}
+
+.inputTextStyle.phone{
+    background: url("../img/phone.png") 10px center no-repeat;
+    background-size: 10px auto;
+}
+
+.inputTextStyle.lock{
+    background: url("../img/lock.png") 10px center no-repeat;
+    background-size: 10px auto;
+}
+
+.inputTextStyle input{
+    height: 36px;
+    line-height: 36px;
+    width: calc(100% - 30px);
+    margin-left: 30px;
+    float: left;
+    display: inline-block;
+    color: #8e8682;
+}
+
+.inputTextStyle.w60{
+    width: 60%;
+}
+
+.btn{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border:1px #ba0c2f solid;
+    float: left;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+.btn.w27{
+    width: 38%;
+    margin: 0 0 0 2%;
+    font-size: 1.0rem;
+}
+
+.btn:after{
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background: #ba0c2f;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    border: 2px #fff solid; 
+}
+
+.btn i{
+    font-style: normal;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+
+/* video */
+#video h2{
+    width: 100%;
+    font-size: 2.0rem;
+    color: #645d5a;
+    text-transform:uppercase;
+    letter-spacing: 0.1rem;
+    font-family: Arial;
+    display: inline-block;
+    margin: 3% 0 0 0;
+}
+
+.videoCon{
+    position: relative;
+}
+
+.videoArea{
+    width: 90%;
+    display: inline-block;
+    margin: 10% 0 6% 0;
+}
+
+.videoFoot{
+    width: 100%;
+    padding: 6px 0;
+    text-align: right;
+    display: inline-block;
+}
+
+.videoFoot a{
+    height: 27px;
+    line-height: 27px;
+    padding: 0 27px 0 0;
+    color: #8e8682;
+    font-size: 1.3rem;
+    text-align: left;
+    display: inline-block;
+    background: url("../img/heart.png") right -20% no-repeat;
+    background-size: 20px auto;
+    margin: 0 6px 0 0;
+    font-family: Arial;
+}
+
+.videoHotArea{
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+}
+
+.videoHotArea h3{
+    font-size: 1.6rem;
+    color: #8e8682;
+    text-transform:uppercase;
+    letter-spacing: 0.1rem;
+    line-height: 2.0rem;
+}
+
+.btn.w50{
+    width: 50%;
+    float: none;
+    margin: 6% 0 0 0;
+}
+
+.vposter{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.vposter span{
+    width: 100%;
+    height: 100%;
+    background: url("../img/play.png") center no-repeat;
+    background-size: 50px auto;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+.btn.disable{
+    border: 1px #8e8682 solid;
+}
+
+.btn.disable:after{
+    background: #8e8682;
+}
+
+
+.alertNode{
+    width: 100%;
+    padding: 16px 0;
+    background: rgba(142,134,130,0.9);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    /*letter-spacing: 0.1em;*/
+}
+
+
+
+
+
+
+
+/* 6plus */
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+
+}
+
+/* 6 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px) and (orientation: portrait) {
+
+}
+
+/* 5s */
+
+@media handheld and (min-height:490px),screen and (max-height:510px) {
+
+}
+
+/* 4s */
+
+@media handheld and (min-height:400px),screen and (max-height:420px) {
+    .logo{
+        margin: 7% 0;
+    }
+
+    .form{
+        font-size: 1.2rem;
+        margin: 6% 0;
+    }
+
+    .inputTextStyle input{
+        height: 32px;
+        line-height: 32px;
+    }
+
+    .btn{
+        height: 36px;
+        line-height: 36px;
+    }
+
+    .videoArea{
+        margin: 5% 0 1% 0;
+    }
+
+    .videoArea{
+        width: 82%;
+    }
+
+    #video h2{
+        font-size: 1.8rem;
+    }
+
+    .videoHotArea h3{
+        font-size: 1.4rem;
+        line-height: 2.0rem;
+    }
+}
+
+
+
+
+
+
+
+
+

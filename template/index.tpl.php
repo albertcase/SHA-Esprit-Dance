@@ -17,14 +17,104 @@
 	<meta name="Keywords" content="">
 	<meta name="Description" content="...">
 
-	<script data-main="../js/config" src="../js/require.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="/src/style/reset.css">
+	<script type="text/javascript">
+		var vid = <?php echo $vid;?>,
+			vsrc = "/files/<?php echo $url;?>";
+	</script>
+	<script data-main="/src/js/config" src="/src/js/require.js"></script>
+	
 
 </head>
 <body>
 
-<div id="dreambox" class="index">
+<!-- http://192.168.8.115:9201/video/d12349534fde6881200427840cf2d6fd -->
 
+<div class="loading">
+	<div class="cssload-loader">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+
+<div id="dreambox">
+	<img src="/src/img/logo.png" width="100%" class="logo" />
+
+	<div class="section active" id="home">
+		<div class="kv">
+			<img src="/src/img/kv.jpg" width="100%" />
+		</div>
+
+		<div class="form">
+			<ul>
+				<li>
+					<div class="inputTextStyle phone w60">
+						<input type="tel" maxlength="11" placeholder="手机号码">
+					</div>
+					<a href="javascript:;" class="btn w27" id="getCodes"><i>获取验证码</i></a>
+				</li>
+				<li>
+					<div class="inputTextStyle lock">
+						<input type="text" class="codesInput" maxlength="6" placeholder="验证码">
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;" class="btn" id="submit_btn"><i>确 认</i></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="section" id="video">
+		<h2>
+			#Dance with Esprit# 
+	    </h2>
+	    <div class="videoArea">
+	    	<div class="videoCon">
+	    		<img src="/src/img/poster.jpg" width="100%" />
+	    	</div>
+	    	<div class="videoFoot">
+	    		<a href="javascript:;" id="dznum">620000</a>
+	    	</div>
+	    </div>
+	    <?php if($ismy) {
+	    ?>
+	    <div class="videoHotArea">
+	    	<h3>
+	    		邀请好友点亮爱心<br>
+				“赞”助我的超值大礼
+	    	</h3>
+	    	<a href="javascript:;" class="btn w50"><i>分 享</i></a>
+	    </div>
+	    <?php
+	    } else {?>
+
+	    <div class="videoHotArea">
+	    	<h3>
+	    		快帮好友点亮爱心<br>
+				“赞”助TA的超值大礼
+	    	</h3>
+	    	<a href="javascript:;" class="btn w50" id="dianzan"><i>点 赞</i></a>
+	    </div>
+	    <?php
+	    }?>
+	</div>
+
+
+
+</div>
+
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
 </div>
 
 
