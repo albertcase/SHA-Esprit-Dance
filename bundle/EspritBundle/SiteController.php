@@ -31,7 +31,7 @@ class SiteController extends Controller {
 		$mobile = 0;
 		if ($user->id == $user_video) {
 			$ismy = 1;
-			if ($user->mobile != '') {
+			if ($user->mobile == '') {
 				$mobile = 1;
 			}
 		} else {
