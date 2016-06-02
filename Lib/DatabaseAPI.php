@@ -132,7 +132,8 @@ class DatabaseAPI {
 			$user = new \stdClass();
 			$user->uid = $uid;
 			$user->openid = $openid;
-			$user->mobile = $mobile;		
+			$user->mobile = $mobile;	
+			$_SESSION['user'] = $user;	
 			return $user;
 		}
 		return NULL;

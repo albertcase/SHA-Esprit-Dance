@@ -18,6 +18,7 @@ class SiteController extends Controller {
 	public function videoAction($id) {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
+		var_dump($user);exit;
 		if (!$user) {
 			$parameterAry = $_GET;
 			if(count($parameterAry)>0)
