@@ -18,10 +18,16 @@ define(["_public"],function(_p) {
   			_p.formErrorTips("验证码输入有误！");
   			s.removeClass("disable");
   		}else{
-  			console.log("提交成功！");
-  			s.removeClass("disable");
 
-  			_p.pageChange("video");
+        _p.ajaxfun("POST", "/api/submit", {"mobile": t.val()}, "json", function(data){
+            _p.formErrorTips(data.msg);
+            if(data.status == 1){
+                _p.pageChange("video");
+            }  
+
+            s.removeClass("disable");
+        });
+	
   		}
     },
     video: function(a, b, c){
@@ -53,10 +59,30 @@ define(["_public"],function(_p) {
 	},
 	dianzan: function(a){
 		var znum = $(a).html();
-		znum++;
-		$(a).html(znum);
-	}
+		
+    _p.ajaxfun("POST", "/api/ballot", {"id": vid}, "json", function(data){
+        _p.formErrorTips(data.msg);
+        if(data.status == 1){
+            znum++;
+            $(a).html(znum);
+        }
+    });
+	},
+  dowcFun: function(){
+      console.log(shareArr["_url"]);
+      _p.ajaxfun("GET", "http://espritdance.samesamechina.com/wechat/ws/jssdk/config/webservice", {"url": shareArr["_url"]}, "json", function(msg){
+          if(msg.status == 1){
+              _p.wechatFun(msg.data.appId, msg.data.timestamp, msg.data.nonceStr, msg.data.signature);
+          }
+      });
+  }
 
 
   }
 });
+
+
+
+
+
+

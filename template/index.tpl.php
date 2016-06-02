@@ -21,7 +21,16 @@
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>";
+
+		var shareArr = {
+			"_title": 'ESPRIT 测试标题', //分享标题
+			"_desc": "ESPRIT 测试描述",    // 分享的描述
+			"_link": window.location.href,    //分享的连接
+			"_imgUrl": "http://" + window.location.host + "/vfile/img/share.jpg",   //分享的图片
+			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
+		}
 	</script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
 	
 
@@ -78,7 +87,7 @@
 	    		<img src="/src/img/poster.jpg" width="100%" />
 	    	</div>
 	    	<div class="videoFoot">
-	    		<a href="javascript:;" id="dznum">620000</a>
+	    		<a href="javascript:;" id="dznum"><?php echo $ballot;?></a>
 	    	</div>
 	    </div>
 	    <?php if($ismy) {
