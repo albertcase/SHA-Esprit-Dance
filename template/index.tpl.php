@@ -114,7 +114,7 @@
 	    		快帮好友点亮爱心<br>
 				“赞”助TA的超值大礼
 	    	</h3>
-	    	<a href="javascript:;" class="btn w50" id="dianzan <?php echo $isballot ? "disable" : "";?>"><i>点 赞</i></a>
+	    	<a href="javascript:;" class="btn w50 <?php echo $isballot ? "disable" : "";?>" id="dianzan"><i>点 赞</i></a>
 	    </div>
 	    <?php
 	    }?>
