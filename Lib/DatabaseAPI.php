@@ -200,6 +200,18 @@ class DatabaseAPI {
 		}
 	}
 
+	public function isballot($uid, $vid) {
+		$sql = "SELECT `id` FROM `ballot` WHERE `uid` = ? and `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("ss", $uid, $vid);
+		$res->execute();
+		$res->bind_result($id);
+		if($res->fetch()) {
+			return 1;
+		}
+		return 0;
+	}
+
 	public function getballot($vid) {
 		$sql = "SELECT count(`id`) FROM `ballot` WHERE `vid` = ?"; 
 		$res = $this->db->prepare($sql);

@@ -22,6 +22,7 @@
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>";
 			var aa = <?php echo $mobile;?>;
+			var bb = <?php echo $isballot;?>;
 		var shareArr = {
 			"_title": 'ESPRIT 测试标题', //分享标题
 			"_desc": "ESPRIT 测试描述",    // 分享的描述
