@@ -146,4 +146,34 @@ class DatabaseAPI {
 		return NULL;
 		
 	}
+
+	public function saveMobile($uid, $mobile) {
+		$sql = "UPDATE `user` SET `mobile` = ? WHERE `id` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("ss", $mobile, $uid);
+		if ($res->execute()) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+	public function ballot($uid, $vid) {
+		$sql = "SELECT `id` FROM `ballot` WHERE `uid` = ? and `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("ss", $uid, $vid);
+		$res->execute();
+		$res->bind_result($id);
+		if($res->fetch()) {
+			return FALSE;
+		}
+		$sql = "INSERT INTO `ballot` SET `uid` = ?, `vid` = ?";
+		$res = $this->db->prepare($sql); 
+		$res->bind_param("ss", $uid, $vid);
+		if ($res->execute()) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
 }
