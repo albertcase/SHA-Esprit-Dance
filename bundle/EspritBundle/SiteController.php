@@ -29,6 +29,7 @@ class SiteController extends Controller {
 		}
 		//已绑定
 		$mobile = 0;
+		echo $user_video;exit;
 		if ($user->id == $user_video) {
 			$ismy = 1;
 			var_dump($user);exit;
