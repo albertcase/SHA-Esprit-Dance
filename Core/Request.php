@@ -46,7 +46,7 @@ class Request {
 	public function validRules($fields, $raw) {
 		$data = array();
 		foreach($fields as $field => $info) {
-			if(!isset($_GET[$field])) {
+			if(!isset($this->params[$field])) {
 				$response = new Response;
 		        $response->statusPrint('999');
 			}
