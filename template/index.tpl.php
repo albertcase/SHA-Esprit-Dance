@@ -21,8 +21,7 @@
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>",
-			isSubmitForm = <?php echo $mobile;?>,
-			isBallot = <?php echo $isballot;?>;
+			isSubmitForm = <?php echo $mobile;?>;
 		var shareArr = {
 			"_title": 'ESPRIT 测试标题', //分享标题
 			"_desc": "ESPRIT 测试描述",    // 分享的描述
@@ -115,7 +114,7 @@
 	    		快帮好友点亮爱心<br>
 				“赞”助TA的超值大礼
 	    	</h3>
-	    	<a href="javascript:;" class="btn w50" id="dianzan"><i>点 赞</i></a>
+	    	<a href="javascript:;" class="btn w50" id="dianzan <?php echo $isballot ? "disable" : "";?>"><i>点 赞</i></a>
 	    </div>
 	    <?php
 	    }?>
