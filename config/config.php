@@ -21,10 +21,10 @@ define("SCOPE", 'snsapi_base');
 
 //Account Access
 define("OAUTH_ACCESS", '{
-	"????": "????????.com", 
+	"esprit_dance": "samesamechina.com" 
 }');
 define("JSSDK_ACCESS", '{
-	"????": "????????.com",
+	"esprit_dance": "samesamechina.com"
 }');
 
 //Database config info

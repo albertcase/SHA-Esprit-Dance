@@ -10,4 +10,5 @@ $routers['/wechat/ws/jssdk/config/webservice'] = array('WechatBundle\WebService'
 $routers['/wechat/ws/jssdk/config/js'] = array('WechatBundle\WebService', 'jssdkConfigJs');
 $routers['/api/check'] = array('EspritBundle\Api', 'check');
 $routers['/video/%'] = array('EspritBundle\Site', 'index');
+$routers['/callback'] = array('EspritBundle\Site', 'callback');
 //$routers['/'] = array('EspritBundle\Site', 'index');
