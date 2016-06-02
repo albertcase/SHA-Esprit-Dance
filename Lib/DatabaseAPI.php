@@ -119,6 +119,17 @@ class DatabaseAPI {
 		return 0;
 	}
 
+	public function bindVideo($uid, $vid) {
+		$sql = "INSERT INTO `user_video` SET `uid` = ?, `vid` = ?";
+		$res = $this->db->prepare($sql); 
+		$res->bind_param("ss", $uid, $vid);
+		if ($res->execute()) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
 	public function insertUser($openid) {
 		$user = $this->findUserByOpenid($openid);
 		if ($user) {
