@@ -106,4 +106,43 @@ class DatabaseAPI {
 		else 
 			return FALSE;
 	}
+
+	public function insertUser($openid) {
+		$user = $this->findUserByOpenid($openid);
+		if ($user) {
+			return $user;
+		}
+		$sql = "INSERT INTO `user` SET `openid` = ?";
+		$res = $this->db->prepare($sql); 
+		$res->bind_param("s", $openid);
+		if ($res->execute()) {
+			return $this->findUserByOpenid($openid);
+		} else {
+			return FALSE;
+		}
+	}
+
+	public function findUserByOpenid($openid) {
+		$sql = "SELECT `id`, `openid` FROM `user` WHERE `openid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $openid);
+		$res->execute();
+		$res->bind_result($uid, $openid);
+		if($res->fetch()) {
+			$user = new \stdClass();
+			$user->uid = $uid;
+			$user->openid = $openid;
+			$user->mobile = $mobile;		
+			return $user;
+		}
+		return NULL;
+	}
+
+	public function userLoad(){
+		if(isset($_SESSION['user'])){
+			return $_SESSION['user'];
+		}
+		return NULL;
+		
+	}
 }

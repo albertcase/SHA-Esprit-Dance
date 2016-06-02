@@ -16,8 +16,8 @@ class SiteController extends Controller {
 	}
 
 	public function videoAction($id) {
-		$UserAPI = new \Lib\UserAPI();
-		$user = $UserAPI->userLoad(true);
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->userLoad();
 		if (!$user) {
 			$parameterAry = $_GET;
 			if(count($parameterAry)>0)
@@ -41,9 +41,13 @@ class SiteController extends Controller {
 			'openid' => array('notnull', '110'),
 		);
 		$request->validation($fields);
-		echo $openid = $request->query->get('openid');exit;
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-		$param['redirect_uri'] = $redirect_uri;
+		$DatabaseAPI->insertUser($openid);
+		if (!isset($_SESSION['redirect_url'])) {
+			$this->redirect('/');
+			exit;
+		}
+		$this->redirect($_SESSION['redirect_url']);
 		exit;
 	}
 
