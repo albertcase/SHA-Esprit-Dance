@@ -37,6 +37,7 @@ class SiteController extends Controller {
 		$fields = array(
 			'openid' => array('notnull', '110'),
 		);
+		echo $openid;exit;
 		$request->validation($fields);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
