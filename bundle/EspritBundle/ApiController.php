@@ -14,7 +14,7 @@ class ApiController extends Controller {
 		}
 		$request = $this->Request();
 		$fields = array(
-			'mobile' => array('mobile', '110'),
+			'mobile' => array('notnull', '110'),
 		);
 		$request->validation($fields);
 		$mobile = $request->request->get('mobile');
