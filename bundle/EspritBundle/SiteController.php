@@ -21,8 +21,19 @@ class SiteController extends Controller {
 		}
 		$video = $DatabaseAPI->findVideoById($id);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
-
-		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'ismy' => 1));
+		$ballot = $DatabaseAPI->getballot($video->vid);
+		$user_video = $DatabaseAPI->getUserVideo($video->vid);
+		if (!$user_video) {
+			//未绑定 直接绑定
+			$DatabaseAPI->bindVideo($user->id, $video->vid);
+		}
+		//已绑定
+		if ($user->id == $user_video) {
+			$ismy = 1;
+		} else {
+			$ismy = 0;
+		}
+		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'ballot' => $ballot, 'ismy' => $ismy));
 		exit;
 	}
 

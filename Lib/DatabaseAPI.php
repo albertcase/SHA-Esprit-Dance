@@ -107,6 +107,18 @@ class DatabaseAPI {
 			return FALSE;
 	}
 
+	public function getUserVideo($vid) {
+		$sql = "SELECT uid FROM `user_video` WHERE `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $vid);
+		$res->execute();
+		$res->bind_result($uid);
+		if($res->fetch()) {
+			return $uid;
+		}
+		return 0;
+	}
+
 	public function insertUser($openid) {
 		$user = $this->findUserByOpenid($openid);
 		if ($user) {
@@ -175,5 +187,17 @@ class DatabaseAPI {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function getballot($vid) {
+		$sql = "SELECT count(`id`) FROM `ballot` WHERE `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $vid);
+		$res->execute();
+		$res->bind_result($num);
+		if($res->fetch()) {
+			return $num;
+		}
+		return 0;
 	}
 }
