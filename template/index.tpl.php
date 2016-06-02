@@ -30,6 +30,7 @@
 			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
 		}
 	</script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
 	
 
