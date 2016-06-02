@@ -37,7 +37,7 @@ class SiteController extends Controller {
 		} else {
 			$ismy = 0;
 		}
-		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'ballot' => $ballot, 'ismy' => $ismy));
+		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'ballot' => $ballot, 'ismy' => $ismy));
 		exit;
 	}
 
