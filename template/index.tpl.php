@@ -86,7 +86,7 @@
 	    		<img src="/src/img/poster.jpg" width="100%" />
 	    	</div>
 	    	<div class="videoFoot">
-	    		<a href="javascript:;" id="dznum">620000</a>
+	    		<a href="javascript:;" id="dznum"><?php echo $ballot;?></a>
 	    	</div>
 	    </div>
 	    <?php if($ismy) {
