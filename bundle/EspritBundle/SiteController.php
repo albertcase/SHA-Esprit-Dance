@@ -28,8 +28,12 @@ class SiteController extends Controller {
 			$DatabaseAPI->bindVideo($user->id, $video->vid);
 		}
 		//已绑定
+		$mobile = 0;
 		if ($user->id == $user_video) {
 			$ismy = 1;
+			if ($user->mobile != '') {
+				$mobile = 1;
+			}
 		} else {
 			$ismy = 0;
 		}

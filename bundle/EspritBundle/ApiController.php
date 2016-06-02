@@ -19,6 +19,8 @@ class ApiController extends Controller {
 		$request->validation($fields);
 		$mobile = $request->query->get('mobile');
 		$DatabaseAPI->saveMobile($user->uid, $mobile);
+		$user->mobile = $mobile;
+		$_SESSION['user'] = $user;
 		return $this->statusPrint(1, '提交成功');
 	}
 

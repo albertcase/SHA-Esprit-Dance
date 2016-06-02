@@ -146,11 +146,11 @@ class DatabaseAPI {
 	}
 
 	public function findUserByOpenid($openid) {
-		$sql = "SELECT `id`, `openid` FROM `user` WHERE `openid` = ?"; 
+		$sql = "SELECT `id`, `openid`, `mobile` FROM `user` WHERE `openid` = ?"; 
 		$res = $this->db->prepare($sql);
 		$res->bind_param("s", $openid);
 		$res->execute();
-		$res->bind_result($uid, $openid);
+		$res->bind_result($uid, $openid, $mobile);
 		if($res->fetch()) {
 			$user = new \stdClass();
 			$user->uid = $uid;
