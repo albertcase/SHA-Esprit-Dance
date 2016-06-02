@@ -1,10 +1,10 @@
 define(function(require, exports, module) {
   return {
     countdown: 30,
-    isPhoneNum:function(v){
+    isPhoneNum:function(v){ //手机验证正则
         return /^0|^((\+?86 )|(\(\+86 \)))?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(v);
     },
-    formErrorTips: function(alertNodeContext){
+    formErrorTips: function(alertNodeContext){  //错误提示弹层
         var alertInt;
         clearTimeout(alertInt);
         if($(".alertNode").length > 0){
@@ -20,7 +20,7 @@ define(function(require, exports, module) {
             $(".alertNode").remove();
         },3000);
     },
-    setTime: function(obj, cb){
+    setTime: function(obj, cb){  //30s倒计时
         var _self = this;
         if (this.countdown == 0) { 
             obj.removeAttr("readonly"); 
@@ -49,7 +49,7 @@ define(function(require, exports, module) {
             }
         });  
     },
-    ajaxfun: function(ajaxType, ajaxUrl, ajaxData, ajaxDataType, ajaxCallback){
+    ajaxfun: function(ajaxType, ajaxUrl, ajaxData, ajaxDataType, ajaxCallback){  //接口函数
         $.ajax({
             type: ajaxType,
             url: ajaxUrl,
@@ -59,7 +59,7 @@ define(function(require, exports, module) {
             ajaxCallback(data)
         })
     },
-    wechatFun: function(_appId, _timestamp, _nonceStr, _signature){
+    wechatFun: function(_appId, _timestamp, _nonceStr, _signature){  //分享函数
         wx.config({
             debug: false,
             appId: _appId,
@@ -88,7 +88,7 @@ define(function(require, exports, module) {
 
         this.wxshareFun();
     },
-    wxshareFun: function(){
+    wxshareFun: function(){  //分享信息重置函数
         wx.ready(function () {
             // 在这里调用 API
             // 2. 分享接口
