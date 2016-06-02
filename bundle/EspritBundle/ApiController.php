@@ -17,7 +17,7 @@ class ApiController extends Controller {
 			'mobile' => array('mobile', '110'),
 		);
 		$request->validation($fields);
-		$mobile = $request->query->get('mobile');
+		$mobile = $request->request->get('mobile');
 		$DatabaseAPI->saveMobile($user->uid, $mobile);
 		$user->mobile = $mobile;
 		$_SESSION['user'] = $user;
@@ -35,7 +35,7 @@ class ApiController extends Controller {
 			'id' => array('notnull', '110'),
 		);
 		$request->validation($fields);
-		$id = $request->query->get('id');
+		$id = $request->request->get('id');
 		$rs = $DatabaseAPI->ballot($user->uid, $id);
 		if ($rs) {
 			return $this->statusPrint(1, '提交成功');
