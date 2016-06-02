@@ -25,6 +25,8 @@ require(['jquery', 'form'], function($, f) {
 		return false
 	})
 
+	f.dowcFun();
+
 
 	$("#getCodes").click(function(){
 		if($(this).hasClass("disable")) return false;
@@ -55,3 +57,18 @@ require(['jquery', 'form'], function($, f) {
 // require(['jquery', 'event', 'selector'], function($, E, S) {
 //     alert($);
 // });
+
+
+
+
+
+
+
+
+
+
+//http://espritdance.samesamechina.com/video/d12349534fde6881200427840cf2d6fd
+//http://espritdance.samesamechina.com/callback?openid=xxx
+
+
+
