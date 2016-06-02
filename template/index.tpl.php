@@ -20,8 +20,9 @@
 	<link rel="stylesheet" type="text/css" href="/src/style/reset.css">
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
-			vsrc = "/files/<?php echo $url;?>";
-			var aa = <?php echo $mobile;?>;
+			vsrc = "/files/<?php echo $url;?>",
+			isSubmitForm = <?php echo $mobile;?>;
+			
 		var shareArr = {
 			"_title": 'ESPRIT 测试标题', //分享标题
 			"_desc": "ESPRIT 测试描述",    // 分享的描述
