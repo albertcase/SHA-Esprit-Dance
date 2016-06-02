@@ -107,6 +107,29 @@ class DatabaseAPI {
 			return FALSE;
 	}
 
+	public function getUserVideo($vid) {
+		$sql = "SELECT uid FROM `user_video` WHERE `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $vid);
+		$res->execute();
+		$res->bind_result($uid);
+		if($res->fetch()) {
+			return $uid;
+		}
+		return 0;
+	}
+
+	public function bindVideo($uid, $vid) {
+		$sql = "INSERT INTO `user_video` SET `uid` = ?, `vid` = ?";
+		$res = $this->db->prepare($sql); 
+		$res->bind_param("ss", $uid, $vid);
+		if ($res->execute()) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
 	public function insertUser($openid) {
 		$user = $this->findUserByOpenid($openid);
 		if ($user) {
@@ -123,11 +146,11 @@ class DatabaseAPI {
 	}
 
 	public function findUserByOpenid($openid) {
-		$sql = "SELECT `id`, `openid` FROM `user` WHERE `openid` = ?"; 
+		$sql = "SELECT `id`, `openid`, `mobile` FROM `user` WHERE `openid` = ?"; 
 		$res = $this->db->prepare($sql);
 		$res->bind_param("s", $openid);
 		$res->execute();
-		$res->bind_result($uid, $openid);
+		$res->bind_result($uid, $openid, $mobile);
 		if($res->fetch()) {
 			$user = new \stdClass();
 			$user->uid = $uid;
@@ -175,5 +198,17 @@ class DatabaseAPI {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function getballot($vid) {
+		$sql = "SELECT count(`id`) FROM `ballot` WHERE `vid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $vid);
+		$res->execute();
+		$res->bind_result($num);
+		if($res->fetch()) {
+			return $num;
+		}
+		return 0;
 	}
 }
