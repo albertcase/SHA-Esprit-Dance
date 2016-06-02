@@ -22,7 +22,7 @@ define(["_public"],function(_p) {
         _p.ajaxfun("POST", "/api/submit", {"mobile": t.val()}, "json", function(data){
             _p.formErrorTips(data.msg);
             if(data.status == 1){
-                _p.pageChange("video");
+                $(".tableLayer").fadeOut("300");
             }  
 
             s.removeClass("disable");

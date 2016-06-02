@@ -21,7 +21,7 @@
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>";
-
+			var aa = <?php echo $mobile;?>;
 		var shareArr = {
 			"_title": 'ESPRIT 测试标题', //分享标题
 			"_desc": "ESPRIT 测试描述",    // 分享的描述
@@ -52,30 +52,37 @@
 <div id="dreambox">
 	<img src="/src/img/logo.png" width="100%" class="logo" />
 
-	<div class="section active" id="home">
-		<div class="kv">
-			<img src="/src/img/kv.jpg" width="100%" />
-		</div>
+	<?php if($mobile) {
+	?>
+	<div class="tableLayer">
+		<img src="/src/img/logo.png" width="100%" class="logo" />
+		<div class="section active" id="home">
+			<div class="kv">
+				<img src="/src/img/kv.jpg" width="100%" />
+			</div>
 
-		<div class="form">
-			<ul>
-				<li>
-					<div class="inputTextStyle phone w60">
-						<input type="tel" maxlength="11" placeholder="手机号码">
-					</div>
-					<a href="javascript:;" class="btn w27" id="getCodes"><i>获取验证码</i></a>
-				</li>
-				<li>
-					<div class="inputTextStyle lock">
-						<input type="text" class="codesInput" maxlength="6" placeholder="验证码">
-					</div>
-				</li>
-				<li>
-					<a href="javascript:;" class="btn" id="submit_btn"><i>确 认</i></a>
-				</li>
-			</ul>
+			<div class="form">
+				<ul>
+					<li>
+						<div class="inputTextStyle phone w60">
+							<input type="tel" maxlength="11" placeholder="手机号码">
+						</div>
+						<a href="javascript:;" class="btn w27" id="getCodes"><i>获取验证码</i></a>
+					</li>
+					<li>
+						<div class="inputTextStyle lock">
+							<input type="text" class="codesInput" maxlength="6" placeholder="验证码">
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;" class="btn" id="submit_btn"><i>确 认</i></a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+	<?php
+	}?>
 
 
 	<div class="section" id="video">

@@ -49,10 +49,6 @@ define(function(require, exports, module) {
             }
         });  
     },
-    pageChange: function(a){
-        $(".section").removeClass("active");
-        $("#"+a).addClass("active");
-    },
     ajaxfun: function(ajaxType, ajaxUrl, ajaxData, ajaxDataType, ajaxCallback){
         $.ajax({
             type: ajaxType,
