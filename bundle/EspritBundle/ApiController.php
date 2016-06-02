@@ -6,18 +6,39 @@ use Core\Controller;
 
 class ApiController extends Controller {
 	
-	public function apiAction() {
-		$url = "http://127.0.0.1/webservice/upload";
-		$ch = curl_init();
+	public function submitAction() {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->userLoad();
+		if (!$user) {
+			return $this->statusPrint(0, '未登录');
+		}
+		$request = $this->Request();
+		$fields = array(
+			'mobile' => array('mobile', '110'),
+		);
+		$request->validation($fields);
+		$mobile = $request->query->get('mobile');
+		$DatabaseAPI->saveMobile($user->uid, $mobile);
+		return $this->statusPrint(1, '提交成功');
+	}
 
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, file_get_contents('getheadimg.jpeg'));
-
-		echo $data = curl_exec($ch);
-		curl_close($ch);
-		exit;
+	public function ballotAction() {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->userLoad();
+		if (!$user) {
+			return $this->statusPrint(0, '未登录');
+		}
+		$request = $this->Request();
+		$fields = array(
+			'id' => array('notnull', '110'),
+		);
+		$request->validation($fields);
+		$id = $request->query->get('id');
+		$rs = $DatabaseAPI->ballot($user->uid, $id);
+		if ($rs) {
+			return $this->statusPrint(1, '提交成功');
+		}
+		return $this->statusPrint(2, '已经投过票了');
 	}
 
 }
