@@ -108,6 +108,7 @@ class WebServiceController extends Controller {
 
 	public function jssdkConfig($url) {
 		$RedisAPI = new \Lib\RedisAPI();
+		var_dump($RedisAPI);exit;
 		$jsapi_ticket = $RedisAPI->getJSApiTicket();
 		$wechatJSSDKAPI = new \Lib\JSSDKAPI();
 		return $wechatJSSDKAPI->getJSSDKConfig(APPID, $jsapi_ticket, $url);
