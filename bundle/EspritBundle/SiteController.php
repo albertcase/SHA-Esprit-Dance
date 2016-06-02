@@ -25,7 +25,7 @@ class SiteController extends Controller {
 		$user_video = $DatabaseAPI->getUserVideo($video->vid);
 		if (!$user_video) {
 			//未绑定 直接绑定
-			$DatabaseAPI->bindVideo($user->id, $video->vid);
+			$DatabaseAPI->bindVideo($user->uid, $video->vid);
 		}
 		//已绑定
 		$mobile = 0;
