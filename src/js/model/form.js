@@ -1,13 +1,13 @@
 define(["_public"],function(_p) {
   return {
-  	getCodes: function(obj, cb){
+  	getCodes: function(obj, cb){  //发送验证码
   		if(!_p.isPhoneNum(obj.val())){
   			_p.formErrorTips("手机号码输入有误！");
   		}else{
   			_p.setTime(obj, cb);
 		}
   	},
-    check: function(t, c, s) {
+    check: function(t, c, s) {  //提交表单函数 
       	if(!_p.isPhoneNum(t.val())){
   			_p.formErrorTips("手机号码输入有误！");
   			s.removeClass("disable");
@@ -30,7 +30,7 @@ define(["_public"],function(_p) {
 	
   		}
     },
-    video: function(a, b, c){
+    video: function(a, b, c){  //视频函数
     	var videoWidth = document.body.clientWidth, 
     		videoHeight = videoWidth * (1080 / 1920) * 0.827;
     	var _video = document.createElement("VIDEO"),
@@ -57,7 +57,7 @@ define(["_public"],function(_p) {
     	_p.eventTester(_video, "pause");
     	_p.eventTester(_video, "ended");
 	},
-	dianzan: function(a){
+	dianzan: function(a){  //点赞函数
 		var znum = $(a).html();
 		
     _p.ajaxfun("POST", "/api/ballot", {"id": vid}, "json", function(data){
@@ -68,7 +68,7 @@ define(["_public"],function(_p) {
         }
     });
 	},
-  dowcFun: function(){
+  dowcFun: function(){ //分享执行函数
       _p.ajaxfun("GET", "http://espritdance.samesamechina.com/wechat/ws/jssdk/config/webservice", {"url": shareArr["_url"]}, "json", function(msg){
           if(msg.status == 1){
               _p.wechatFun(msg.data.appId, msg.data.timestamp, msg.data.nonceStr, msg.data.signature);

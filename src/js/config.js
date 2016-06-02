@@ -13,10 +13,9 @@ require.config({
     urlArgs: "v=" + (new Date()).getTime()
 });
 
-require([
-	'css!style/style',
-], function () {
+require(['css!style/style'], function () {
 	//console.log('Styles have loaded');
+	// 样式导入
 });
 
 require(['jquery', 'form'], function($, f) {
@@ -25,15 +24,18 @@ require(['jquery', 'form'], function($, f) {
 		return false
 	})
 
+	//分享默认执行
 	f.dowcFun();
 
 
+	//获取验证码事件
 	$("#getCodes").click(function(){
 		if($(this).hasClass("disable")) return false;
 		var telInput = $("input[type='tel']");
 		f.getCodes(telInput, $(this));
 	})
 
+	//提交表单事件
 	$("#submit_btn").click(function(){
 		if($(this).hasClass("disable")) return false;
 		var telInput = $("input[type='tel']");
@@ -42,15 +44,16 @@ require(['jquery', 'form'], function($, f) {
 		f.check(telInput, codesInput, $(this));
 	})
 
+	//视频输出事件
 	f.video(".videoCon", vsrc, "/src/img/poster.jpg");
 
-
+	//点赞事件
 	$("#dianzan").on("click", function(){
 		if($(this).hasClass("disable")) return false;
 		f.dianzan("#dznum");
 		$(this).addClass("disable");
 	})
-    //console.log( $ ) // UNDEFINED!
+
 });
 
 
