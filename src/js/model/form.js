@@ -69,7 +69,6 @@ define(["_public"],function(_p) {
     });
 	},
   dowcFun: function(){
-      console.log(shareArr["_url"]);
       _p.ajaxfun("GET", "http://espritdance.samesamechina.com/wechat/ws/jssdk/config/webservice", {"url": shareArr["_url"]}, "json", function(msg){
           if(msg.status == 1){
               _p.wechatFun(msg.data.appId, msg.data.timestamp, msg.data.nonceStr, msg.data.signature);

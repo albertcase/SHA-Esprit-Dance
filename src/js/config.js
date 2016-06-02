@@ -54,11 +54,6 @@ require(['jquery', 'form'], function($, f) {
 });
 
 
-// require(['jquery', 'event', 'selector'], function($, E, S) {
-//     alert($);
-// });
-
-
 
 
 

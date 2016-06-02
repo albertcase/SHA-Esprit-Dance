@@ -65,7 +65,7 @@ define(function(require, exports, module) {
     },
     wechatFun: function(_appId, _timestamp, _nonceStr, _signature){
         wx.config({
-            debug: true,
+            debug: false,
             appId: _appId,
             timestamp: _timestamp,
             nonceStr: _nonceStr,
