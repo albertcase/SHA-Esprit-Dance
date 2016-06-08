@@ -19,21 +19,15 @@ require(['css!style/style'], function () {
 });
 
 require(['jquery', 'form'], function($, f) {
-	$("#dreambox").css({"opacity": 1});
-	$(document).on("touchmove", function(){
-		return false
-	})
-
-	//分享默认执行
-	f.dowcFun();
-
+	
+	f.init();
 
 	//获取验证码事件
-	$("#getCodes").click(function(){
-		if($(this).hasClass("disable")) return false;
-		var telInput = $("input[type='tel']");
-		f.getCodes(telInput, $(this));
-	})
+	// $("#getCodes").click(function(){
+	// 	if($(this).hasClass("disable")) return false;
+	// 	var telInput = $("input[type='tel']");
+	// 	f.getCodes(telInput, $(this));
+	// })
 
 	//提交表单事件
 	$("#submit_btn").click(function(){
@@ -44,23 +38,16 @@ require(['jquery', 'form'], function($, f) {
 		f.check(telInput, codesInput, $(this));
 	})
 
-	//视频输出事件
-	f.video(".videoCon", vsrc, "/src/img/poster.jpg");
-
 	//点赞事件
 	$("#dianzan").on("click", function(){
 		if($(this).hasClass("disable")) return false;
-		f.dianzan("#dznum");
+		f.dianzan("#dznum i");
 		$(this).addClass("disable");
 	})
 
+
+
 });
-
-
-
-
-
-
 
 
 
