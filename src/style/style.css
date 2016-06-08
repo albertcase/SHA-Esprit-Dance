@@ -341,11 +341,11 @@
 }
 
 .popups{
-    width: 82%;
+    width: 86%;
     height: 80%;
     overflow: hidden;
     position: absolute;
-    left: 9%;
+    left: 7%;
     top: 10%;
     background: #fff;
     text-align: center;
@@ -444,6 +444,10 @@
 
 #clayer .rulecon p{
     padding: 16px 0;
+}
+
+#activeRulesLayer{
+    height: auto;
 }
 
 #clayer{
