@@ -18,9 +18,7 @@
 	<meta name="Description" content="...">
 
 	<link rel="stylesheet" type="text/css" href="/src/style/reset.css">
-	<?php
-		$area = 'sh';
-	?>
+	
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>",
@@ -34,7 +32,12 @@
 			"_imgUrl": "http://" + window.location.host + "/vfile/img/share.jpg",   //分享的图片
 			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
 		}
+
+		<?php
+			$area = "nb";
+		?>
 	</script>
+
 	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
 	
@@ -104,7 +107,7 @@
 	</div>
 	<?php
 	}?>
-	<?php $ismy = 1;?>
+	
 	<div class="section" id="video">
 	    <div class="videoArea">
 	    	<div class="videoCon">
