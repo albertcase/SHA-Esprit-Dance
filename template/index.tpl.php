@@ -34,7 +34,7 @@
 		}
 
 		<?php
-			$area = "nb";
+			$area = "sh";
 		?>
 	</script>
 
