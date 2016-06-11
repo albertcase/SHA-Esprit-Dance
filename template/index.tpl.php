@@ -102,7 +102,6 @@
 	<?php
 	}?>
 
-	<?php $ismy = 1;?>
 	<div class="section" id="video">
 	    <div class="videoArea">
 	    	<div class="videoCon">
