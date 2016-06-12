@@ -38,15 +38,6 @@ require(['jquery', 'form'], function($, f) {
 		f.check(telInput, codesInput, $(this));
 	})
 
-	//点赞事件
-	$("#dianzan").on("click", function(){
-		if($(this).hasClass("disable")) return false;
-		f.dianzan("#dznum i");
-		$(this).addClass("disable");
-	})
-
-
-
 });
 
 

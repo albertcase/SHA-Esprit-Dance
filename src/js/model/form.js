@@ -48,6 +48,16 @@ define(["_public"],function(_p) {
             self.checkedFun("read");
         })
 
+        //点赞事件
+        $("#dianzan").on("touchstart", function(){
+            if($(this).hasClass("disable")) {
+                _p.formErrorTips("你已经点过赞了！");
+            }else{
+              f.dianzan("#dznum i");
+              $(this).addClass("disable");
+            }
+        })
+
         $(".loading").fadeOut("100");
 
     },
