@@ -9,29 +9,35 @@ define(["_public"],function(_p) {
 
         self.dowcFun(); //分享默认执行
 
-        //视频输出事件
+        // 视频输出事件
         $(".vposter").on("click", function(){
             self.video("#vplay", vsrc, "../src/img/poster.jpg");
         });
         
+        // checkbox 
         self.checkedFun("read");
+
+        // checkbox事件监测
+        $("#read").change(function(){
+            self.checkedFun("read");
+        })
         
+        // 活动与细则
         $(".rulesLink").on("touchstart", function(){
             self.ruleFun("rules", "close");
         })
 
+        // 活动规则
         $(".activeRules").on("touchstart", function(){
             self.ruleFun("activeRulesLayer", "close");
         })
 
-        $("#shareBtn").on("touchstart", function(){
-            self.shareTips();
-        })
-
+        // 优惠券
         $("#couponBtn").on("touchstart", function(){
             self.ruleFun("clayer", "close");
         })
 
+        // 弹窗关闭
         $(".close").on("touchstart", function(){
             $(this).parents(".popups").fadeOut("100", function(){
                 $(".popupsNode").hide();
@@ -39,13 +45,15 @@ define(["_public"],function(_p) {
             return false;
         })
 
+        // 分享提示层
+        $("#shareBtn").on("touchstart", function(){
+            self.shareTips();
+        })
+
+        // 分享点击关闭提示层
         $(".shareTips").on("touchstart", function(){
             $(this).fadeOut("100");
             return false;
-        })
-
-        $("#read").change(function(){
-            self.checkedFun("read");
         })
 
         //点赞事件

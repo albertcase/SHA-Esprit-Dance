@@ -47,8 +47,6 @@
 
 <div class="shareTips"></div>
 
-<!-- http://192.168.8.115:9201/video/d12349534fde6881200427840cf2d6fd -->
-
 <div class="loading">
 	<div class="cssload-loader">
 		<div></div>

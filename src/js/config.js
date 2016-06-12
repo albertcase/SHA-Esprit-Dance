@@ -1,25 +1,22 @@
 require.config({
     baseUrl:'../src',
-    paths:{   // 单独js模块加载
-    	'jquery': 'js/lib/jquery',
-    	"_public": 'js/model/public',
-    	"form": 'js/model/form',	
-    },
     map: {
       '*': {
         'css': 'js/css.min'
       }
     },
-    urlArgs: "v=" + (new Date()).getTime()
+    paths:{   // 单独js模块加载
+    	'jquery': 'js/lib/jquery',
+    	"_public": 'js/model/public',
+    	"form": 'js/model/form',	
+    },
+    //urlArgs: "v=" + (new Date()).getTime()
 });
 
-require(['css!style/style'], function () {
+require(['css!style/style', 'jquery', 'form'], function (_css, $, f) {
 	//console.log('Styles have loaded');
 	// 样式导入
-});
 
-require(['jquery', 'form'], function($, f) {
-	
 	f.init();
 
 	//获取验证码事件
@@ -37,8 +34,9 @@ require(['jquery', 'form'], function($, f) {
 		$(this).addClass("disable");
 		f.check(telInput, codesInput, $(this));
 	})
-
 });
+
+
 
 
 
