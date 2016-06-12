@@ -37,10 +37,6 @@ require(['css!style/style', 'jquery', 'form'], function (_css, $, f) {
 });
 
 
-
-
-
-
 //http://espritdance.samesamechina.com/video/d12349534fde6881200427840cf2d6fd
 //http://espritdance.samesamechina.com/callback?openid=xxx
 

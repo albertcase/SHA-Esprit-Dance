@@ -40,7 +40,15 @@
 
 	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
-	
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?6037e120cc56809030fea8bf93ebfd86";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 
 </head>
 <body>
