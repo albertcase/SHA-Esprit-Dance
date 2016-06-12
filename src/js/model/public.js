@@ -99,7 +99,6 @@ define(function(require, exports, module) {
             // 在这里调用 API
             // 2. 分享接口
             // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-            alert(6);
             wx.onMenuShareAppMessage({
                 title: shareArr._title,
                 desc: shareArr._desc_friend,
@@ -109,7 +108,6 @@ define(function(require, exports, module) {
                     //  alert('用户点击发送给朋友');
                 },
                 success: function (res) {
-                    alert(shareArr._link);
                     _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
                     //  alert('已分享');
                 },
