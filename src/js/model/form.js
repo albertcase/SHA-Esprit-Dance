@@ -61,7 +61,7 @@ define(["_public"],function(_p) {
             if($(this).hasClass("disable")) {
                 _p.formErrorTips("你已经点过赞了！");
             }else{
-              f.dianzan("#dznum i");
+              self.dianzan("#dznum i");
               $(this).addClass("disable");
             }
         })
