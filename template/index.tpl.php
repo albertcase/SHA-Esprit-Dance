@@ -18,6 +18,7 @@
 	<meta name="Description" content="...">
 
 	<link rel="stylesheet" type="text/css" href="/src/style/reset.css">
+	
 	<script type="text/javascript">
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>",
@@ -31,7 +32,12 @@
 			"_imgUrl": "http://" + window.location.host + "/vfile/img/share.jpg",   //分享的图片
 			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
 		}
+
+		<?php
+			$area = "sh";
+		?>
 	</script>
+
 	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
 	
@@ -129,7 +135,11 @@
     		<?php if($ismy) {
 	    	?>
     			<a href="javascript:;" class="btn w42" id="shareBtn"><i>分享</i></a>
-    			<a href="javascript:;" class="btn w42" id="couponBtn"><i>查看优惠券</i></a>
+    			<?php if($area == "nb") {
+    				?>
+    					<a href="javascript:;" class="btn w42" id="couponBtn"><i>查看优惠券</i></a>
+	    			<?php
+			    }?>
     		<?php
 	    	} else {?>
     			<a href="javascript:;" class="btn opa0"><i>点赞</i></a>
@@ -212,19 +222,26 @@
 	</div>
 </div>
 
-<!-- popups-3 -->
-<div class="popups" id="clayer">
-	<h2>官网优惠券 <a href="javascript:;" class="close"></a></h2>
-	<div class="popups_con">
-		<div class="rulecon">
-			<p>
-				获得100元现金优惠礼券<br>
-				asjhdfjajshdj<br>
-				赶快前往ESPRIT官网选购初夏之礼吧！
-			</p>
+
+
+<?php if($area == "nb") {
+	?>
+		<!-- popups-3 -->
+		<div class="popups" id="clayer">
+			<h2>官网优惠券 <a href="javascript:;" class="close"></a></h2>
+			<div class="popups_con">
+				<div class="rulecon">
+					<p>
+						获得100元现金优惠礼券<br>
+						asjhdfjajshdj<br>
+						赶快前往ESPRIT官网选购初夏之礼吧！
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
+	<?php
+}?>
+
 
 
 <!-- 横屏代码 -->
