@@ -21,7 +21,7 @@ class SiteController extends Controller {
 		}
 		$video = $DatabaseAPI->findVideoById($id);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
-		$ballot = $DatabaseAPI->getballot($video->vid);
+		$ballot = $video->ballot;
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
 		$user_video = $DatabaseAPI->getUserVideo($video->vid);
 		$mobile = 0;
