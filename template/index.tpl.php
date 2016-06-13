@@ -197,11 +197,11 @@
 			<p>2. ESPRIT拥有对于获奖者的最终决定权。</p>
 			<p>3. 奖品设置</p>
 			<blockquote>
-			一等奖（2份）：iPhone 6s 16G一部 <br>
-			二等奖（2份）：Beats by Dr. Dre 耳机一台 <br>
-			三等奖（4份）：ESPRIT 腕表一块 <br>
-			四等奖（21份）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、T恤、USB） <br>
-			五等奖（21份）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、旅行包、毛巾）
+			一等奖（共2名）：iPhone 6s 16G一部<br>
+			二等奖（共2名）：Beats SOLO 2 无线耳机一台<br>
+			三等奖（共4名）：ESPRIT 腕表一块<br>
+			四等奖（共21名）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、T恤、USB）<br>
+			五等奖（共21名）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、旅行包、毛巾）<br>
 			</blockquote>
 			<p>4. 获奖者将由ESPRIT专员联络并安排奖品领取事宜。</p>
 			<p>5. 若受货源或者其他不可抗力影响，领奖时间可能会相应推后，ESPRIT将会根据实际情况相应通知中奖者。</p>
@@ -219,11 +219,11 @@
 				分享跳舞片段至微信朋友圈，召集好友点赞，按照点赞数排名先后，即有机会获得丰厚奖品！
 			</p>
 			<h3>奖品设置</h3>
-			<p>一等奖（2份）：<br>iPhone 6s 16G一部 </p>
-			<p>二等奖（2份）：<br>Beats by Dr. Dre 耳机一台 </p>
-			<p>三等奖（4份）：<br>ESPRIT 腕表一块 </p>
-			<p>四等奖（21份）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、T恤、USB）</p>
-			<p>五等奖（21份）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、旅行包、毛巾）</p>
+			<p>一等奖（共2名）：<br>iPhone 6s 16G一部</p>
+			<p>二等奖（共2名）：<br>Beats SOLO 2 无线耳机一台</p>
+			<p>三等奖（共4名）：<br>ESPRIT 腕表一块</p>
+			<p>四等奖（共21名）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、T恤、USB）</p>
+			<p>五等奖（共21名）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、旅行包、毛巾）</p>
 		</div>
 	</div>
 </div>
