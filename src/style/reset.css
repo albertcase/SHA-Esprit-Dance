@@ -68,7 +68,7 @@ html, body{
     height:100%;
     position: relative;
     font-size: 65%;
-    background: #fff;
+    background: #fadc8c;
 
     -webkit-font-smoothing: antialiased; 
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -108,21 +108,21 @@ html, body{
 
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #999;  
+    color: #675642;
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #999;
+    color: #675642;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-    color: #999;
+    color: #675642;
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-    color: #999;
+    color: #675642;
 }
 
 
@@ -133,12 +133,11 @@ textarea::-webkit-input-placeholder {
 .loading{
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 1);
+    background: #fadc8c;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 100;
-    display: none;
 }
 
 .cssload-loader {
@@ -306,7 +305,6 @@ textarea::-webkit-input-placeholder {
 }
 
 
-#dreambox{
-    opacity: 0;
-}
+
+
 

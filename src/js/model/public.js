@@ -39,13 +39,19 @@ define(function(require, exports, module) {
         }   
     },
     eventTester: function(m, e){  //视频事件
-        m.addEventListener(e,function(){  
+        var self = this;
+        m.addEventListener(e, function(){  
             if(e === "play"){
-                $(".vposter").hide();
-            }else if(e === "pause"){
-                $(".vposter").show();
-            }else if(e === "ended"){
-                $(".vposter").show();
+                $("#vplay").css({"visibility":"visible"});
+                $(".vposter").css({"visibility":"hidden"});
+            }else{
+                $(".vposter").css({"visibility":"visible"});
+                $("#vplay").css({"visibility":"hidden"});
+
+                if(e === "error"){
+                    self.formErrorTips("视频加载出错");
+                    $("#vplay").html("");
+                }
             }
         });  
     },
@@ -93,17 +99,16 @@ define(function(require, exports, module) {
             // 在这里调用 API
             // 2. 分享接口
             // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-
             wx.onMenuShareAppMessage({
                 title: shareArr._title,
-                desc: shareArr._desc,
+                desc: shareArr._desc_friend,
                 link: shareArr._link,
                 imgUrl: shareArr._imgUrl,
                 trigger: function (res) {
                     //  alert('用户点击发送给朋友');
                 },
                 success: function (res) {
-
+                    _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
                     //  alert('已分享');
                 },
                 cancel: function (res) {
@@ -125,7 +130,7 @@ define(function(require, exports, module) {
                     //   alert('用户点击分享到朋友圈');
                 },
                 success: function (res) {
-
+                    _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
                     // alert('已分享');
                 },
                 cancel: function (res) {
@@ -136,6 +141,18 @@ define(function(require, exports, module) {
                 }
             });
         }); //end of wx.ready
+    },
+    popups: function(){
+        if($(".popupsNode").length <= 0){
+            var popupsNode = document.createElement("div");
+                popupsNode.setAttribute("class","popupsNode");
+                document.body.appendChild(popupsNode);
+
+            $(".popupsNode").on("touchmove", function(){
+              return false
+            })
+        }
+        
     }
 
   }
