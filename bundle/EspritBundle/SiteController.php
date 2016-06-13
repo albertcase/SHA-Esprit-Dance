@@ -24,19 +24,21 @@ class SiteController extends Controller {
 		$ballot = $DatabaseAPI->getballot($video->vid);
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
 		$user_video = $DatabaseAPI->getUserVideo($video->vid);
+		$mobile = 0;
+		$ismy = 0;
+		if ($user->mobile == '') {
+			$mobile = 1;
+		}
 		if (!$user_video) {
 			//未绑定 直接绑定
+			$ismy = 1;
 			$DatabaseAPI->bindVideo($user->uid, $video->vid);
+			$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
+			exit;
 		}
 		//已绑定
-		$mobile = 0;
 		if ($user->uid == $user_video) {
-			$ismy = 1;
-			if ($user->mobile == '') {
-				$mobile = 1;
-			}
-		} else {
-			$ismy = 0;
+			$ismy = 1;	
 		}
 		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
 		exit;
