@@ -82,16 +82,17 @@ class DatabaseAPI {
 	}
 
 	public function findVideoById($id){
-		$sql = "SELECT `vid`, `fid`, `id` FROM `video` WHERE `id` = ?"; 
+		$sql = "SELECT `vid`, `fid`, `id`, `ballot` FROM `video` WHERE `id` = ?"; 
 		$res = $this->db->prepare($sql);
 		$res->bind_param("s", $id);
 		$res->execute();
-		$res->bind_result($vid, $fid, $id);
+		$res->bind_result($vid, $fid, $id, $ballot);
 		if($res->fetch()) {
 			$video = new \stdClass();
 			$video->vid = $vid;
 			$video->fid = $fid;
 			$video->id = $id;
+			$video->ballot = $ballot;
 			return $video;
 		}
 		return NULL;
