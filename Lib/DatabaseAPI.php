@@ -196,7 +196,7 @@ class DatabaseAPI {
 		$res->bind_param("ss", $uid, $vid);
 		if ($res->execute()) {
 			//投票成功
-			$sql = "UPDATE `video` SET `ballot` = ballot+1 WHERE `id` = ?"; 
+			$sql = "UPDATE `video` SET `ballot` = ballot+1 WHERE `vid` = ?"; 
 			$res2 = $this->db->prepare($sql);
 			$res2->bind_param("s", $vid);
 			$res2->execute();
