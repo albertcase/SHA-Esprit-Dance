@@ -222,8 +222,8 @@
 			<p>一等奖（2份）：<br>iPhone 6s 16G一部 </p>
 			<p>二等奖（2份）：<br>Beats by Dr. Dre 耳机一台 </p>
 			<p>三等奖（4份）：<br>ESPRIT 腕表一块 </p>
-			<p>四等奖（21份）：<br>ESPRIT GOODIE BAG（包含#ImPerfect手提袋、T恤、USB）</p>
-			<p>五等奖（21份）：<br>ESPRIT GOODIE BAG（包含#ImPerfect手提袋、旅行包、毛巾）</p>
+			<p>四等奖（21份）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、T恤、USB）</p>
+			<p>五等奖（21份）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、旅行包、毛巾）</p>
 		</div>
 	</div>
 </div>
