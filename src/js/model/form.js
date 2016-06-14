@@ -127,15 +127,16 @@ define(["_public"],function(_p) {
       		_video.setAttribute("controls", "controls");
       		_video.setAttribute("src", b);
       		_video.setAttribute("poster", c);
+          _video.setAttribute("webkit-playsinline", "webkit-playsinline");
       		
 
           $.when($(a).html(_video)).done(function() {
               _video.play();
 
               _p.eventTester(_video, "play");
-              _p.eventTester(_video, "pause");
+              //_p.eventTester(_video, "pause");
               _p.eventTester(_video, "ended");
-              _p.eventTester(_video, "error");
+              //_p.eventTester(_video, "error");
           })
 	},
 	dianzan: function(a){  //点赞函数
