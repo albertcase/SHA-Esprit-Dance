@@ -10,7 +10,7 @@ define(["_public"],function(_p) {
         self.dowcFun(); //分享默认执行
 
         // 视频输出事件
-        $(".vposter").on("touch", function(){
+        $(".vposter").on("touchstart", function(){
             self.video("#vplay", vsrc, "../src/img/poster.jpg");
         });
         
