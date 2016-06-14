@@ -42,11 +42,11 @@ define(function(require, exports, module) {
         var self = this;
         m.addEventListener(e, function(){  
             if(e === "play"){
-                $("#vplay").css({"visibility":"visible"});
-                $(".vposter").css({"visibility":"hidden"});
+                // $("#vplay").css({"visibility":"visible"});
+                // $(".vposter").css({"visibility":"hidden"});
             }else{
-                $(".vposter").css({"visibility":"visible"});
-                $("#vplay").css({"visibility":"hidden"});
+                // $(".vposter").css({"visibility":"visible"});
+                // $("#vplay").css({"visibility":"hidden"});
 
                 if(e === "error"){
                     self.formErrorTips("视频加载出错");

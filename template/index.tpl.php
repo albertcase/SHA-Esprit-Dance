@@ -117,10 +117,10 @@
 	<div class="section" id="video">
 	    <div class="videoArea">
 	    	<div class="videoCon">
-	    		<div class="vposter" style="opacity:0;">
+	    		<!-- <div class="vposter" style="opacity:0;">
 	    			<span></span>
 	    			<img src="/src/img/poster.jpg" width="100%" />
-	    		</div>
+	    		</div> -->
 	    		<div id="vplay"></div>
 	    	</div>
 	    </div>

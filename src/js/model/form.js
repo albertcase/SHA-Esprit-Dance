@@ -10,9 +10,11 @@ define(["_public"],function(_p) {
         self.dowcFun(); //分享默认执行
 
         // 视频输出事件
-        $(".vposter").on("touchstart", function(){
-            self.video("#vplay", vsrc, "../src/img/poster.jpg");
-        });
+        // $(".vposter").on("touchstart", function(){
+        //     self.video("#vplay", vsrc, "../src/img/poster.jpg");
+        // });
+
+        self.video("#vplay", vsrc, "../src/img/poster.jpg");
         
         // checkbox 
         self.checkedFun("read");
@@ -132,7 +134,7 @@ define(["_public"],function(_p) {
           $(a).html(_video);
 
           //$.when($(a).html(_video)).done(function() {
-              _video.play();
+              //_video.play();
 
               _p.eventTester(_video, "play");
               //_p.eventTester(_video, "pause");
