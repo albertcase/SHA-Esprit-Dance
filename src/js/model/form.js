@@ -124,7 +124,7 @@ define(["_public"],function(_p) {
 
       		_video.setAttribute("width", videoWidth);
       		_video.setAttribute("height", videoHeight);
-      		_video.setAttribute("controls", "controls");
+      		//_video.setAttribute("controls", "controls");
       		_video.setAttribute("src", b);
       		_video.setAttribute("poster", c);
           _video.setAttribute("webkit-playsinline", "webkit-playsinline");
