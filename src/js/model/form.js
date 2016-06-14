@@ -10,7 +10,7 @@ define(["_public"],function(_p) {
         self.dowcFun(); //分享默认执行
 
         // 视频输出事件
-        $(".vposter").on("click", function(){
+        $(".vposter").on("touch", function(){
             self.video("#vplay", vsrc, "../src/img/poster.jpg");
         });
         
@@ -129,15 +129,16 @@ define(["_public"],function(_p) {
       		_video.setAttribute("poster", c);
           _video.setAttribute("webkit-playsinline", "webkit-playsinline");
       		
+          $(a).html(_video);
 
-          $.when($(a).html(_video)).done(function() {
+          //$.when($(a).html(_video)).done(function() {
               _video.play();
 
               _p.eventTester(_video, "play");
               //_p.eventTester(_video, "pause");
               _p.eventTester(_video, "ended");
               //_p.eventTester(_video, "error");
-          })
+          //})
 	},
 	dianzan: function(a){  //点赞函数
 		var znum = $(a).html();
