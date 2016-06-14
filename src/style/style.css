@@ -221,7 +221,7 @@
 .videoHotArea h3{
     font-size: 1.2rem;
     color: #675642;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     letter-spacing: 0.1rem;
     line-height: 1.8rem;
     position: relative;
