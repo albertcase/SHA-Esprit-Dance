@@ -122,6 +122,7 @@
 	    			<img src="/src/img/poster.jpg" width="100%" />
 	    		</div> -->
 	    		<div id="vplay"></div>
+	    		<img src="/src/img/poster.jpg" width="100%" style="opacity:0;" />
 	    	</div>
 	    </div>
 
