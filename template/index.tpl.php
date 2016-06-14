@@ -26,7 +26,7 @@
 			ismy = <?php echo $ismy;?>;
 		var shareArr = {
 			"_title": '#DanceWithEsprit#', //分享标题
-			"_desc": "#DanceWithEsprit#",    // 分享朋友圈的描述
+			"_desc": "我在中山公园龙之梦#DanceWithEsprit#，快来参加赢大奖！",    // 分享朋友圈的描述
 			"_desc_friend": "以舞蹈演绎#ImPerfect#， 展现你与众不同的魅力！",    // 分享好友的描述
 			"_link": window.location.href,    //分享的连接
 			"_imgUrl": "http://" + window.location.host + "/src/img/share.jpg",   //分享的图片
@@ -198,7 +198,7 @@
 			<p>3. 奖品设置</p>
 			<blockquote>
 			一等奖（共2名）：iPhone 6s 16G一部<br>
-			二等奖（共2名）：Beats SOLO 2 无线耳机一台<br>
+			二等奖（共2名）：Beats Solo2 无线蓝牙耳机一台<br>
 			三等奖（共4名）：ESPRIT 腕表一块<br>
 			四等奖（共21名）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、T恤、USB）<br>
 			五等奖（共21名）：ESPRIT GOODIE BAG（包含#ImPerfect手提袋、旅行包、毛巾）<br>
@@ -220,7 +220,7 @@
 			</p>
 			<h3>奖品设置</h3>
 			<p>一等奖（共2名）：<br>iPhone 6s 16G一部</p>
-			<p>二等奖（共2名）：<br>Beats SOLO 2 无线耳机一台</p>
+			<p>二等奖（共2名）：<br>Beats Solo2 无线蓝牙耳机一台</p>
 			<p>三等奖（共4名）：<br>ESPRIT 腕表一块</p>
 			<p>四等奖（共21名）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、T恤、USB）</p>
 			<p>五等奖（共21名）：<br>ESPRIT GOODIE BAG<br>（包含#ImPerfect手提袋、旅行包、毛巾）</p>
