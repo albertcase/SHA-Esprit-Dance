@@ -128,7 +128,7 @@
 
 	    <div class="videoHotArea">
 	    	<h3>
-	    		<?php echo $ismy ? "6月16日至19日 上海中山公园龙之梦<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥<br>记得常来看看多少人赞了你哦" : "快帮好友点亮爱心<br>“赞”助TA的超值大礼<br><br>";?>	 
+	    		<?php echo $ismy ? "6月16日至19日 上海中山公园龙之梦<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥<br>记得常来看看多少人赞了你哦" : " 快帮好友点亮爱心 “赞”助TA的超值大礼<br>6月16日至19日 上海中山公园龙之梦<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥";?>	 
 	    	</h3>
 	    	
 	    </div>
