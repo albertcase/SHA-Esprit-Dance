@@ -120,7 +120,7 @@ class SiteController extends Controller {
 		);
 		$request->validation($fields);
 		$openid = $request->query->get('openid');
-		$callback = $request->query->get('callback');
+		echo $callback = $request->query->get('callback');die;
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
 		$this->redirect($callback);
