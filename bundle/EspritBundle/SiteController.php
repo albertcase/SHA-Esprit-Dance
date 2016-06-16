@@ -7,6 +7,18 @@ use Core\Controller;
 class SiteController extends Controller {
 
 	public function indexAction($id) {
+		// $DatabaseAPI = new \Lib\DatabaseAPI();
+		// $user = $DatabaseAPI->userLoad();
+		// if (!$user) {
+		// 	$parameterAry = $_GET;
+		// 	if(count($parameterAry)>0)
+		// 		$url = "/video/". $id . "?" . http_build_query($parameterAry);
+		// 	else
+		// 		$url = "/video/". $id;
+		// 	$_SESSION['redirect_url'] = $url;
+		// 	$this->redirect("http://espritdance.samesamechina.com/wechat/ws/oauth2?redirect_uri=http://espritdance.samesamechina.com/callback&scope=snsapi_base");
+		// 	exit;
+		// }
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
 		if (!$user) {
@@ -15,8 +27,8 @@ class SiteController extends Controller {
 				$url = "/video/". $id . "?" . http_build_query($parameterAry);
 			else
 				$url = "/video/". $id;
-			$_SESSION['redirect_url'] = $url;
-			$this->redirect("http://espritdance.samesamechina.com/wechat/ws/oauth2?redirect_uri=http://espritdance.samesamechina.com/callback&scope=snsapi_base");
+			//$_SESSION['redirect_url'] = $url;
+			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback?callback=".$url). "&scope=snsapi_base");
 			exit;
 		}
 		$video = $DatabaseAPI->findVideoById($id);
@@ -97,19 +109,30 @@ class SiteController extends Controller {
 	}
 
 	public function callbackAction() {	
+		// $request = $this->Request();
+		// $fields = array(
+		// 	'openid' => array('notnull', '110'),
+		// );
+		// $request->validation($fields);
+		// $openid = $request->query->get('openid');
+		// $DatabaseAPI = new \Lib\DatabaseAPI();
+		// $DatabaseAPI->insertUser($openid);
+		// if (!isset($_SESSION['redirect_url'])) {
+		// 	$this->redirect('/');
+		// 	exit;
+		// }
+		// $this->redirect($_SESSION['redirect_url']);
+		// exit;
 		$request = $this->Request();
 		$fields = array(
 			'openid' => array('notnull', '110'),
 		);
 		$request->validation($fields);
 		$openid = $request->query->get('openid');
+		$callback = $request->query->get('callback');
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
-		if (!isset($_SESSION['redirect_url'])) {
-			$this->redirect('/');
-			exit;
-		}
-		$this->redirect($_SESSION['redirect_url']);
+		$this->redirect($callback);
 		exit;
 	}
 
@@ -120,7 +143,7 @@ class SiteController extends Controller {
 		);
 		$request->validation($fields);
 		$openid = $request->query->get('openid');
-		echo $callback = $request->query->get('callback');die;
+		$callback = $request->query->get('callback');
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
 		$this->redirect($callback);
