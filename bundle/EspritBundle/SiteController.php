@@ -65,7 +65,7 @@ class SiteController extends Controller {
 		$file = $DatabaseAPI->findFileByFid($video->fid);
 		$ballot = $video->ballot;
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
-		echo $user_video = $DatabaseAPI->getUserVideo($video->vid);exit;
+		$user_video = $DatabaseAPI->getUserVideo($video->vid);
 		$mobile = 0;
 		if (!$user_video) {
 			//未绑定 直接绑定
@@ -86,6 +86,7 @@ class SiteController extends Controller {
 		} else {
 			$ismy = 0;
 		}
+		echo $ismy;exit;
 		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
 		exit;
 	}
