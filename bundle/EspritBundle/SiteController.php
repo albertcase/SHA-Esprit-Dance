@@ -57,8 +57,8 @@ class SiteController extends Controller {
 				$url = "/video/". $id . "?" . http_build_query($parameterAry);
 			else
 				$url = "/video/". $id;
-			$_SESSION['redirect_url'] = $url;
-			$this->redirect("http://espritdance.samesamechina.com/wechat/ws/oauth2?redirect_uri=http://espritdance.samesamechina.com/callback&scope=snsapi_base");
+			//$_SESSION['redirect_url'] = $url;
+			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback2?callback=".$url). "&scope=snsapi_base");
 			exit;
 		}
 		$video = $DatabaseAPI->findVideoById($id);
@@ -86,7 +86,6 @@ class SiteController extends Controller {
 		} else {
 			$ismy = 0;
 		}
-		echo $ismy;exit;
 		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
 		exit;
 	}
@@ -111,6 +110,20 @@ class SiteController extends Controller {
 			exit;
 		}
 		$this->redirect($_SESSION['redirect_url']);
+		exit;
+	}
+
+	public function callback2Action() {	
+		$request = $this->Request();
+		$fields = array(
+			'openid' => array('notnull', '110'),
+		);
+		$request->validation($fields);
+		$openid = $request->query->get('openid');
+		$callback = $request->query->get('callback');
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$DatabaseAPI->insertUser($openid);
+		$this->redirect($callback);
 		exit;
 	}
 
