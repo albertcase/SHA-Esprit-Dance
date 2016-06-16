@@ -11,4 +11,5 @@ $routers['/video/%'] = array('EspritBundle\Site', 'index');
 $routers['/callback'] = array('EspritBundle\Site', 'callback');
 $routers['/api/submit'] = array('EspritBundle\Api', 'submit');
 $routers['/api/ballot'] = array('EspritBundle\Api', 'ballot');
+$routers['/test/%'] = array('EspritBundle\Site', 'test');
 //$routers['/'] = array('EspritBundle\Site', 'index');
