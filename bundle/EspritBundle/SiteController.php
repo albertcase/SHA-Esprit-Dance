@@ -37,11 +37,12 @@ class SiteController extends Controller {
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
 		$user_video = $DatabaseAPI->getUserVideo($video->vid);
 		$mobile = 0;
+		$info = $DatabaseAPI->findUserByOpenid($user->openid);
 		if (!$user_video) {
 			//未绑定 直接绑定
 			$DatabaseAPI->bindVideo($user->uid, $video->vid);
 			$ismy = 1;
-			if ($user->mobile == '') {
+			if ($info->mobile == '') {
 				$mobile = 1;
 			}
 			$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
@@ -50,7 +51,7 @@ class SiteController extends Controller {
 		//已绑定	
 		if ($user->uid == $user_video) {
 			$ismy = 1;
-			if ($user->mobile == '') {
+			if ($info->mobile == '') {
 				$mobile = 1;
 			}
 		} else {
