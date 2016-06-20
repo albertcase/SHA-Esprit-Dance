@@ -28,7 +28,7 @@
 			"_title": '#DanceWithEsprit#', //分享标题
 			"_desc": "我在中山公园龙之梦#DanceWithEsprit# 快来参加赢奖",    // 分享朋友圈的描述
 			"_desc_friend": "以舞蹈演绎#ImPerfect#， 展现你与众不同的魅力！",    // 分享好友的描述
-			"_link": window.location.href,    //分享的连接
+			"_link": window.location.href, //分享的连接
 			"_imgUrl": "http://" + window.location.host + "/src/img/share.jpg",   //分享的图片
 			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
 		}
