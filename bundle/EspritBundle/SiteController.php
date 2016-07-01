@@ -29,7 +29,6 @@ class SiteController extends Controller {
 		if (!$user) {	
 			//$_SESSION['redirect_url'] = $url;
 			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback?callback=".$url). "&scope=snsapi_base");
-			exit;
 		}
 		$video = $DatabaseAPI->findVideoById($id);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
@@ -46,7 +45,6 @@ class SiteController extends Controller {
 				$mobile = 1;
 			}
 			$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
-			exit;
 		}
 		//已绑定	
 		if ($user->uid == $user_video) {
@@ -58,7 +56,6 @@ class SiteController extends Controller {
 			$ismy = 0;
 		}
 		$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
-		exit;
 	}
 
 	public function testAction($id) {
@@ -72,7 +69,6 @@ class SiteController extends Controller {
 				$url = "/video/". $id;
 			//$_SESSION['redirect_url'] = $url;
 			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback2?callback=".$url). "&scope=snsapi_base");
-			exit;
 		}
 		$video = $DatabaseAPI->findVideoById($id);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
@@ -88,7 +84,6 @@ class SiteController extends Controller {
 				$mobile = 1;
 			}
 			$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
-			exit;
 		}
 		//已绑定	
 		if ($user->uid == $user_video) {
@@ -100,13 +95,11 @@ class SiteController extends Controller {
 			$ismy = 0;
 		}
 		$this->render('index', array('url' => $file->filename, 'vid' => $video->vid , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
-		exit;
 	}
 
 	public function videoAction($id) {
 
 		$this->render('video', array('url' => $file->filename, 'vid' => $video->vid));
-		exit;
 	}
 
 	public function callbackAction() {	
@@ -134,7 +127,6 @@ class SiteController extends Controller {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
 		$this->redirect($callback);
-		exit;
 	}
 
 	public function callback2Action() {	
@@ -148,7 +140,6 @@ class SiteController extends Controller {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->insertUser($openid);
 		$this->redirect($callback);
-		exit;
 	}
 
 }
