@@ -12,6 +12,7 @@ class Response {
 
 	public function send() {
 		print $this->response;
+		exit;
 	}
 
 	public function statusPrint($status, $msg = '') {
