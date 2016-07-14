@@ -31,7 +31,7 @@ class SiteController extends Controller {
 			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback?callback=".$url). "&scope=snsapi_base");
 		}
 		$video = $DatabaseAPI->findVideoById($id);
-		$rs = $DatabaseAPI->bindVideo($user->uid, $video->vid);
+		echo $rs = $DatabaseAPI->bindVideo($user->uid, $video->vid);exit;
 		$this->redirect("/show/" . $rs);
 		}
 
