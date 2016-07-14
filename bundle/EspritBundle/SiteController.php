@@ -19,6 +19,7 @@ class SiteController extends Controller {
 		// 	$this->redirect("http://espritdance.samesamechina.com/wechat/ws/oauth2?redirect_uri=http://espritdance.samesamechina.com/callback&scope=snsapi_base");
 		// 	exit;
 		// }
+		echo $id;exit;
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
 		$parameterAry = $_GET;
