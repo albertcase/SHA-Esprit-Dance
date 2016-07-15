@@ -206,10 +206,10 @@ class DatabaseAPI {
 		}
 	}
 
-	public function ballot($uid, $vid) {
+	public function ballot($uid, $user_vid) {
 		$sql = "SELECT `id` FROM `ballot` WHERE `uid` = ? and `vid` = ?"; 
 		$res = $this->db->prepare($sql);
-		$res->bind_param("ss", $uid, $vid);
+		$res->bind_param("ss", $uid, $user_vid);
 		$res->execute();
 		$res->bind_result($id);
 		if($res->fetch()) {
@@ -217,12 +217,12 @@ class DatabaseAPI {
 		}
 		$sql = "INSERT INTO `ballot` SET `uid` = ?, `vid` = ?";
 		$res = $this->db->prepare($sql); 
-		$res->bind_param("ss", $uid, $vid);
+		$res->bind_param("ss", $uid, $user_vid);
 		if ($res->execute()) {
 			//投票成功
-			$sql = "UPDATE `video` SET `ballot` = ballot+1 WHERE `vid` = ?"; 
+			$sql = "UPDATE `user_video` SET `ballot` = ballot+1 WHERE `id` = ?"; 
 			$res2 = $this->db->prepare($sql);
-			$res2->bind_param("s", $vid);
+			$res2->bind_param("s", $user_vid);
 			$res2->execute();
 			return TRUE;
 		} else {
@@ -230,10 +230,10 @@ class DatabaseAPI {
 		}
 	}
 
-	public function isballot($uid, $vid) {
+	public function isballot($uid, $user_vid) {
 		$sql = "SELECT `id` FROM `ballot` WHERE `uid` = ? and `vid` = ?"; 
 		$res = $this->db->prepare($sql);
-		$res->bind_param("ss", $uid, $vid);
+		$res->bind_param("ss", $uid, $user_vid);
 		$res->execute();
 		$res->bind_result($id);
 		if($res->fetch()) {
