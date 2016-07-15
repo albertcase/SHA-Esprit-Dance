@@ -174,6 +174,7 @@ define(["_public"],function(_p) {
   resultFun: function(){
       $("#video").hide();
       $("#result").show();
+      $("#dreambox").addClass("resultbg");
   }
 
   }
