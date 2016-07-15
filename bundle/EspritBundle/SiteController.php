@@ -6,6 +6,13 @@ use Core\Controller;
 
 class SiteController extends Controller {
 
+	public function loginAction($openid) {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->insertUser($openid);
+		var_dump($user);
+		exit;
+	}
+
 	public function indexAction($id) {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
