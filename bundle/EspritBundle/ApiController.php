@@ -43,4 +43,20 @@ class ApiController extends Controller {
 		return $this->statusPrint(2, '已经投过票了');
 	}
 
+	public function shareAction() {
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->userLoad();
+		if (!$user) {
+			return $this->statusPrint(0, '未登录');
+		}
+		$request = $this->Request();
+		$fields = array(
+			'id' => array('notnull', '110'),
+		);
+		$request->validation($fields);
+		$id = $request->request->get('id');
+		$DatabaseAPI->share($id);
+		return $this->statusPrint(1, '分享成功');
+	}
+
 }

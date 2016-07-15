@@ -13,6 +13,7 @@ $routers['/callback'] = array('EspritBundle\Site', 'callback');
 $routers['/callback2'] = array('EspritBundle\Site', 'callback2');
 $routers['/api/submit'] = array('EspritBundle\Api', 'submit');
 $routers['/api/ballot'] = array('EspritBundle\Api', 'ballot');
+$routers['/api/share'] = array('EspritBundle\Api', 'share');
 $routers['/test/%'] = array('EspritBundle\Site', 'test');
 $routers['/login/%'] = array('EspritBundle\Site', 'login');
 $routers['/result'] = array('EspritBundle\Site', 'result');

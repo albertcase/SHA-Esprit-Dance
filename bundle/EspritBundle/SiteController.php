@@ -47,6 +47,7 @@ class SiteController extends Controller {
 		$video = $DatabaseAPI->findVideoByVid($user_video->vid);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
 		$ballot = $user_video->ballot;
+		$status = $user_video->status;
 		$isballot = $DatabaseAPI->isballot($user->uid, $id);
 		
 		$mobile = 0;
@@ -59,7 +60,7 @@ class SiteController extends Controller {
 				$mobile = 1;
 			}
 		}
-		$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $id , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
+		$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $id , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy, 'status' => $status));
 	
 	}
 
