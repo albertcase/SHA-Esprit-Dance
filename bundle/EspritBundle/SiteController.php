@@ -24,7 +24,7 @@ class SiteController extends Controller {
 	}
 
 	public function showAction($id) {
-		//echo $id;exit;
+		echo $id;exit;
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
 		$user_video = $DatabaseAPI->getUserVideoById($id);
