@@ -24,10 +24,10 @@ class SiteController extends Controller {
 	}
 
 	public function showAction($id) {
-		echo $id;exit;
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
 		$user_video = $DatabaseAPI->getUserVideoById($id);
+		echo $user_video->vid;exit;
 		$video = $DatabaseAPI->findVideoByVid($user_video->vid);
 
 		echo $file = $DatabaseAPI->findFileByFid($video->fid);exit;
