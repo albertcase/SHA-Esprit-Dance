@@ -23,10 +23,11 @@
 		var vid = <?php echo $vid;?>,
 			vsrc = "/files/<?php echo $url;?>",
 			isSubmitForm = <?php echo $mobile;?>,
-			ismy = <?php echo $ismy;?>;
+			ismy = <?php echo $ismy;?>,
+			shareStatus = "<?php echo $status;?>";  //分享状态
 		var shareArr = {
 			"_title": '#DanceWithEsprit#', //分享标题
-			"_desc": "我在中山公园龙之梦#DanceWithEsprit# 快来参加赢奖",    // 分享朋友圈的描述
+			"_desc": "我在宁波来福士广场<br>#DanceWithEsprit#快来参加赢奖",    // 分享朋友圈的描述
 			"_desc_friend": "以舞蹈演绎#ImPerfect#， 展现你与众不同的魅力！",    // 分享好友的描述
 			"_link": '<?php echo $shareurl;?>',    //分享的连接
 			"_imgUrl": "http://" + window.location.host + "/src/img/share.jpg",   //分享的图片
@@ -34,7 +35,7 @@
 		}
 
 		<?php
-			$area = "sh";
+			$area = "nb";
 		?>
 	</script>
 
@@ -128,9 +129,8 @@
 
 	    <div class="videoHotArea">
 	    	<h3>
-	    		<?php echo $ismy ? "6月16日至19日 上海中山公园龙之梦<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥<br>记得常来看看多少人赞了你哦" : " 快帮好友点亮爱心 “赞”助TA的超值大礼<br>6月16日至19日 上海中山公园龙之梦<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥";?>	 
+	    		<?php echo $ismy ? "7月28日至31日 宁波来福士广场<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥<br>记得常来看看多少人赞了你哦" : " 快帮好友点亮爱心 “赞”助TA的超值大礼<br>7月28日至31日 宁波来福士广场<br>你与iPhone 6s, Beats Solo2 无线蓝牙耳机等<br>丰厚奖品仅一步之遥";?>	 
 	    	</h3>
-	    	
 	    </div>
 
 	    <div class="videoFoot">
@@ -141,12 +141,7 @@
     	<div class="btnArea">
     		<?php if($ismy) {
 	    	?>
-    			<a href="javascript:;" class="btn w42" id="shareBtn"><i>分享</i></a>
-    			<?php if($area == "nb") {
-    				?>
-    					<a href="javascript:;" class="btn w42" id="couponBtn"><i>查看优惠券</i></a>
-	    			<?php
-			    }?>
+    			<a href="javascript:;" class="btn w42" id="shareBtn"><i>分享有惊喜</i></a>
     		<?php
 	    	} else {?>
     			<a href="javascript:;" class="btn opa0"><i>点赞</i></a>
@@ -157,6 +152,15 @@
     	<a href="javascript:;" class="activeRules"><i>活动规则</i></a>
 
 	</div>
+
+
+	<div class="section" id="result">
+		
+	</div>
+	
+
+
+
 
 </div>
 
@@ -234,7 +238,7 @@
 <?php if($area == "nb") {
 	?>
 		<!-- popups-3 -->
-		<div class="popups" id="clayer">
+		<!-- <div class="popups" id="clayer">
 			<h2>官网优惠券 <a href="javascript:;" class="close"></a></h2>
 			<div class="popups_con">
 				<div class="rulecon">
@@ -245,7 +249,7 @@
 					</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	<?php
 }?>
 
