@@ -26,6 +26,16 @@ class SiteController extends Controller {
 	public function showAction($id) {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
+		$parameterAry = $_GET;
+		if(count($parameterAry)>0)
+			$url = "/show/". $id . "?" . http_build_query($parameterAry);
+		else
+			$url = "/show/". $id;
+		if (!$user) {	
+			//$_SESSION['redirect_url'] = $url;
+			$this->redirect("/wechat/ws/oauth2?redirect_uri=".urlencode("http://espritdance.samesamechina.com/callback?callback=".$url). "&scope=snsapi_base");
+		}
+
 		$user_video = $DatabaseAPI->getUserVideoById($id);
 		$video = $DatabaseAPI->findVideoByVid($user_video->vid);
 		$file = $DatabaseAPI->findFileByFid($video->fid);
@@ -35,14 +45,14 @@ class SiteController extends Controller {
 		$mobile = 0;
 		$ismy = 0;
 		//已绑定	
-		if ($user->uid == $user_video) {
+		if ($user->uid == $user_video->uid) {
 			$ismy = 1;
 			$info = $DatabaseAPI->findUserByOpenid($user->openid);	
 			if ($info->mobile == '') {
 				$mobile = 1;
 			}
 		}
-		$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com/show/' . $id, 'url' => $file->filename, 'vid' => $id , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
+		$this->render('index', array('shareurl' => 'http://espritdance.samesamechina.com' . $url, 'url' => $file->filename, 'vid' => $id , 'mobile' => $mobile, 'isballot' => $isballot, 'ballot' => $ballot, 'ismy' => $ismy));
 	
 	}
 
