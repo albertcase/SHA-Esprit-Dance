@@ -7,18 +7,6 @@ use Core\Controller;
 class SiteController extends Controller {
 
 	public function indexAction($id) {
-		// $DatabaseAPI = new \Lib\DatabaseAPI();
-		// $user = $DatabaseAPI->userLoad();
-		// if (!$user) {
-		// 	$parameterAry = $_GET;
-		// 	if(count($parameterAry)>0)
-		// 		$url = "/video/". $id . "?" . http_build_query($parameterAry);
-		// 	else
-		// 		$url = "/video/". $id;
-		// 	$_SESSION['redirect_url'] = $url;
-		// 	$this->redirect("http://espritdance.samesamechina.com/wechat/ws/oauth2?redirect_uri=http://espritdance.samesamechina.com/callback&scope=snsapi_base");
-		// 	exit;
-		// }
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$user = $DatabaseAPI->userLoad();
 		$parameterAry = $_GET;
@@ -33,14 +21,19 @@ class SiteController extends Controller {
 		$video = $DatabaseAPI->findVideoById($id);
 		$rs = $DatabaseAPI->bindVideo($user->uid, $video->vid);
 		$this->redirect("/show/" . $rs);
-		}
+	}
 
 	public function showAction($id) {
-		echo $id;exit;
-		$file = $DatabaseAPI->findFileByFid($video->fid);
-		$ballot = $video->ballot;
+		//echo $id;exit;
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$user = $DatabaseAPI->userLoad();
+		$user_video = $DatabaseAPI->getUserVideoById($id);
+		$video = $DatabaseAPI->findVideoByVid($user_video->vid);
+
+		echo $file = $DatabaseAPI->findFileByFid($video->fid);exit;
+		$ballot = $user_video->ballot;
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
-		$user_video = $DatabaseAPI->getUserVideo($video->vid);
+		
 		$mobile = 0;
 		$info = $DatabaseAPI->findUserByOpenid($user->openid);
 		if (!$user_video) {

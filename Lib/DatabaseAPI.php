@@ -120,6 +120,21 @@ class DatabaseAPI {
 		return 0;
 	}
 
+	public function getUserVideoById($id) {
+		$sql = "SELECT uid,vid FROM `user_video` WHERE `id` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $id);
+		$res->execute();
+		$res->bind_result($uid, $vid);
+		if($res->fetch()) {
+			$obj = new \stdClass();
+			$obj->uid = $uid;
+			$obj->vid = $vid;
+			return $obj;
+		}
+		return 0;
+	}
+
 	public function bindVideo($uid, $vid) {
 		$sql = "SELECT `id` FROM `user_video` WHERE `uid` = ? and `vid` = ?"; 
 		$res = $this->db->prepare($sql);
