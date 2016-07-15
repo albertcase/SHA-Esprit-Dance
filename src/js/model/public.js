@@ -116,8 +116,8 @@ define(function(require, exports, module) {
                     });
 
                     setTimeout(function(){
-                        location.href = "/result";     //跳转在延迟200ms后执行
-                    }, 200)
+                        shareArr["_callback"]();     //跳转在延迟200ms后执行
+                    }, 100)
                     //  alert('已分享');
                 },
                 cancel: function (res) {
@@ -146,8 +146,8 @@ define(function(require, exports, module) {
                     });
 
                     setTimeout(function(){
-                        location.href = "/result";     //跳转在延迟200ms后执行
-                    }, 200)
+                        shareArr["_callback"]();     //跳转在延迟200ms后执行
+                    }, 100)
                     
                     // alert('已分享');
                 },

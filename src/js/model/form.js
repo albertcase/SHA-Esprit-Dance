@@ -170,6 +170,10 @@ define(["_public"],function(_p) {
   },
   shareTips: function(){
       $(".shareTips").fadeIn("100");
+  },
+  resultFun: function(){
+      $("#video").hide();
+      $("#result").show();
   }
 
   }

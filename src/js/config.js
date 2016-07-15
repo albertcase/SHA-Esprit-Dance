@@ -34,6 +34,15 @@ require(['css!style/style', 'jquery', 'form'], function (_css, $, f) {
 		$(this).addClass("disable");
 		f.check(telInput, codesInput, $(this));
 	})
+
+	$("#djqLink").on("click", function(){
+		f.resultFun();
+	})
+
+	shareArr["_callback"] = function(){
+		f.resultFun();
+	}
+
 });
 
 

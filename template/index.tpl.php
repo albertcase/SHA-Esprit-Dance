@@ -24,14 +24,15 @@
 			vsrc = "/files/<?php echo $url;?>",
 			isSubmitForm = <?php echo $mobile;?>,
 			ismy = <?php echo $ismy;?>,
-			shareStatus = "<?php echo $status;?>";  //分享状态
+			shareStatus = <?php echo $status;?>;  //分享状态
 		var shareArr = {
 			"_title": '#DanceWithEsprit#', //分享标题
 			"_desc": "我在宁波来福士广场<br>#DanceWithEsprit#快来参加赢奖",    // 分享朋友圈的描述
 			"_desc_friend": "以舞蹈演绎#ImPerfect#， 展现你与众不同的魅力！",    // 分享好友的描述
 			"_link": '<?php echo $shareurl;?>',    //分享的连接
 			"_imgUrl": "http://" + window.location.host + "/src/img/share.jpg",   //分享的图片
-			"_url": encodeURIComponent(window.location.href.split("#")[0]) //.replace('http%3A%2F%2F','')
+			"_url": encodeURIComponent(window.location.href.split("#")[0]), //.replace('http%3A%2F%2F','')
+			"_callback": ""
 		}
 
 		<?php
@@ -140,8 +141,18 @@
 
     	<div class="btnArea">
     		<?php if($ismy) {
-	    	?>
-    			<a href="javascript:;" class="btn w42" id="shareBtn"><i>分享有惊喜</i></a>
+    			if($status){
+	    	?>	
+					<a href="javascript:;" class="btn w80" id="djqLink"><i>查看ESPRIT天猫旗舰店代金券</i></a>
+			<?php 
+				} else {
+			?>
+					<a href="javascript:;" class="btn w42" id="shareBtn"><i>分享有惊喜</i></a>
+			<?php
+					
+    			}
+    		?>
+    			
     		<?php
 	    	} else {?>
     			<a href="javascript:;" class="btn opa0"><i>点赞</i></a>
@@ -153,11 +164,22 @@
 
 	</div>
 
-
-	<div class="section" id="result">
-		
-	</div>
 	
+	<?php if($area == "nb") {
+		?>
+			<div id="result">
+				
+				<div class="danceSlogan">
+					<img src="/src/img/danceSlogan.png" width="100%">
+				</div>
+				<div class="resultText">
+					<img src="/src/img/codeText.png" width="100%">
+				</div>
+
+			</div>
+		<?php
+	}?>
+		
 
 
 
