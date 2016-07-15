@@ -28,8 +28,8 @@ class SiteController extends Controller {
 		$user = $DatabaseAPI->userLoad();
 		$user_video = $DatabaseAPI->getUserVideoById($id);
 		$video = $DatabaseAPI->findVideoByVid($user_video->vid);
-		echo $video->fid;exit;
-		echo $file = $DatabaseAPI->findFileByFid($video->fid);exit;
+		$file = $DatabaseAPI->findFileByFid($video->fid);
+		echo $file->filename;exit;
 		$ballot = $user_video->ballot;
 		$isballot = $DatabaseAPI->isballot($user->uid, $video->vid);
 		
