@@ -121,16 +121,17 @@ class DatabaseAPI {
 	}
 
 	public function getUserVideoById($id) {
-		$sql = "SELECT uid,vid,ballot FROM `user_video` WHERE `id` = ?"; 
+		$sql = "SELECT uid,vid,ballot,status FROM `user_video` WHERE `id` = ?"; 
 		$res = $this->db->prepare($sql);
 		$res->bind_param("s", $id);
 		$res->execute();
-		$res->bind_result($uid, $vid, $ballot);
+		$res->bind_result($uid, $vid, $ballot, $status);
 		if($res->fetch()) {
 			$obj = new \stdClass();
 			$obj->uid = $uid;
 			$obj->vid = $vid;
 			$obj->ballot = $ballot;
+			$obj->status = $status;
 			return $obj;
 		}
 		return 0;
@@ -229,6 +230,14 @@ class DatabaseAPI {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function share($id) {
+		$sql = "UPDATE `user_video` SET `status` = 1 WHERE `id` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $id);
+		$res->execute();
+		return TRUE;
 	}
 
 	public function isballot($uid, $user_vid) {
