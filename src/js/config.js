@@ -50,4 +50,8 @@ require(['css!style/style', 'jquery', 'form'], function (_css, $, f) {
 //http://espritdance.samesamechina.com/callback?openid=xxx
 
 
+//http://espritdance.samesamechina.com/login/123123
+//http://espritdance.samesamechina.com/video/bd66fcbc63ffa46c72baa52793656f6d
+
+
 
