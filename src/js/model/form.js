@@ -70,6 +70,21 @@ define(["_public"],function(_p) {
 
         $(".loading").fadeOut("100");
 
+
+        var clipboard = new Clipboard('.resultText', {
+              text: function() {
+                  return 'to be or not to be';
+              }
+          });
+
+          clipboard.on('success', function(e) {
+              _p.formErrorTips(e);
+          });
+
+          clipboard.on('error', function(e) {
+              _p.formErrorTips(e);
+          });
+
     },
     checkedFun: function(obj){
         var self = this;
