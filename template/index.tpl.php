@@ -41,7 +41,9 @@
 	</script>
 
 	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 	<script data-main="/src/js/config" src="/src/js/require.js"></script>
+
 	<script>
 		var _hmt = _hmt || [];
 		(function() {
@@ -177,6 +179,22 @@
 				</div>
 
 			</div>
+
+			<script type="text/javascript">
+				var clipboard = new Clipboard('.resultText', {
+			        text: function() {
+			            return 'to be or not to be';
+			        }
+			    });
+
+			    clipboard.on('success', function(e) {
+			        console.log(e);
+			    });
+
+			    clipboard.on('error', function(e) {
+			        console.log(e);
+			    });
+			</script>
 		<?php
 	}?>
 		
