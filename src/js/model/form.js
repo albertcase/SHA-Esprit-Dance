@@ -71,18 +71,18 @@ define(["_public"],function(_p) {
         $(".loading").fadeOut("100");
 
 
-        var clipboard = new Clipboard('.resultText', {
+        var clipboard = new Clipboard('#dreambox', {
               text: function() {
                   return 'to be or not to be';
               }
           });
 
           clipboard.on('success', function(e) {
-              _p.formErrorTips(e);
+              console.log(e);
           });
 
           clipboard.on('error', function(e) {
-              _p.formErrorTips(e);
+              console.log("error:" + e);
           });
 
     },
