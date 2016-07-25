@@ -521,10 +521,10 @@
 .tbCode{
     width: 80%;
     border: 2px #857253 solid;
-    padding: 16px 18px;
+    padding: 16px;
     text-align: left;
     line-height: 20px;
-    margin: 16px 0 10px 0;
+    margin: 14px 0 10px 0;
     font-size: 1.3rem;
     color: #675642;
     position: relative;
