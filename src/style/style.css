@@ -514,7 +514,8 @@
     margin: 0 0 6px 0;
     display: inline-block;
     pointer-events: none;
-    -webkit-user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
     /*background: url("../img/codeText.png") center no-repeat;
     background-size: 100% auto;
     font-size: 1.5rem;*/
@@ -522,7 +523,8 @@
 
 .resultText h3 img{
     pointer-events: none;
-    -webkit-user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
 }
 
 .tbCode{
