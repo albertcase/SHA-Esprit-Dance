@@ -530,7 +530,7 @@
 .tbCode{
     width: 80%;
     border: 2px #857253 solid;
-    padding: 16px;
+    padding: 16px 14px 16px 16px;
     text-align: left;
     margin: 14px 0 10px 0;
     font-size: 1.3rem;
