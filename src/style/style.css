@@ -540,6 +540,11 @@
     display: inline-block;
 }
 
+.tbCode textarea{
+    width: 100%;
+    display: inline-block;
+}
+
 .tbCode_tps{
     width: 100%;
     text-align: center;

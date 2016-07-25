@@ -180,7 +180,7 @@
 即刻获得ESPRIT天猫官方旗舰店代金券  -->
 					</h3>
 					<div class="tbCode">
-						<textarea readonly="readonly">
+						<textarea readonly="readonly" rows="3">
 							超级品牌日，使用￥50元无门槛代金券￥抢先预览（长按复制整段文案，打开手机淘宝即可进入活动内容）
 						</textarea>
 					</div>
