@@ -173,6 +173,7 @@ define(["_public"],function(_p) {
       $(".shareTips").fadeIn("100");
   },
   resultFun: function(){
+      $("#home").hide();
       $("#video").hide();
       $("#result").show();
       $("#dreambox").addClass("resultbg");
