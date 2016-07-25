@@ -495,7 +495,7 @@
 }
 
 .danceSlogan{
-    margin: 22% 0 0 0;
+    margin: 14% 0 0 0;
     display: inline-block;
 }
 
@@ -507,6 +507,37 @@
     display: inline-block;
 }
 
+
+/* 7.25 */
+.resultText h3{
+    width: 90%;
+    margin: 0 0 6px 0;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.tbCode{
+    width: 80%;
+    border: 2px #857253 solid;
+    padding: 16px 18px;
+    text-align: left;
+    line-height: 20px;
+    margin: 16px 0 10px 0;
+    font-size: 1.2rem;
+    color: #675642;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.tbCode_tps{
+    width: 100%;
+    text-align: center;
+    line-height: 18px;
+    color: #675642;
+    font-size: 1.2rem;
+    display: inline-block;
+}
 
 
 
@@ -638,11 +669,18 @@
     }
 
     .danceSlogan{
-        margin: 16% 0 0 0;
+        margin: 6% 0 0 0;
         display: inline-block;
     }
 
+    .resultText{
+        margin: 12% 0 0 0;
+    }
 
+    .resultText h3{
+        width: 96%;
+        margin: 0 0 6px 0;
+    }
 
 }
 
@@ -726,10 +764,18 @@
     }
 
     .danceSlogan{
-        margin: 16% 0 0 0;
+        margin: 6% 0 0 0;
         display: inline-block;
     }
 
+    .resultText{
+        margin: 12% 0 0 0;
+    }
+    
+    .resultText h3{
+        width: 96%;
+        margin: 0 0 6px 0;
+    }
 }
 
 
