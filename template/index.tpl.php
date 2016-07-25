@@ -27,7 +27,7 @@
 			shareStatus = <?php echo $status;?>;  //分享状态
 		var shareArr = {
 			"_title": '#DanceWithEsprit#', //分享标题
-			"_desc": "我在宁波来福士广场<br>#DanceWithEsprit#快来参加赢奖",    // 分享朋友圈的描述
+			"_desc": "我在宁波来福士广场#DanceWithEsprit#快来参加赢奖",    // 分享朋友圈的描述
 			"_desc_friend": "以舞蹈演绎#ImPerfect#， 展现你与众不同的魅力！",    // 分享好友的描述
 			"_link": '<?php echo $shareurl;?>',    //分享的连接
 			"_imgUrl": "http://" + window.location.host + "/src/img/share.jpg",   //分享的图片
@@ -175,8 +175,9 @@
 				</div>
 				<div class="resultText">
 					<h3>
-						长按复制以下淘口令，并打开“手机淘宝”APP 
-即刻获得ESPRIT天猫官方旗舰店代金券 
+						<img src="/src/img/codeText.png" width="100%">
+						<!-- 长按复制以下淘口令，并打开“手机淘宝”APP 
+即刻获得ESPRIT天猫官方旗舰店代金券  -->
 					</h3>
 					<div class="tbCode">
 						超级品牌日，使用￥50元无门槛代金券￥抢先预览（长按复制整段文案，打开手机淘宝即可进入活动内容）
@@ -256,10 +257,10 @@
 				分享跳舞片段至微信朋友圈，召集好友点赞，按照点赞数排名先后，即有机会获得丰厚奖品！
 			</p>
 			<h3>奖品设置</h3>
-			<p>一等奖（共2名）：iPhone 6s 16G一部</p>
-			<p>二等奖（共2名）：Beats Solo2 无线蓝牙耳机一台</p>
-			<p>三等奖（共4名）：ESPRIT 腕表一块</p>
-			<p>四等奖（共42名）：#ImPerfect#T恤一件、ESPRIT天猫官方旗舰店100元无门槛代金券一张</p>
+			<p>一等奖（共2名）：<br>iPhone 6s 16G一部</p>
+			<p>二等奖（共2名）：<br>Beats Solo2 无线蓝牙耳机一台</p>
+			<p>三等奖（共4名）：<br>ESPRIT 腕表一块</p>
+			<p>四等奖（共42名）：<br>#ImPerfect#T恤一件、ESPRIT天猫官方旗舰店100元无门槛代金券一张</p>
 		</div>
 	</div>
 </div>
