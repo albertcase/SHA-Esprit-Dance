@@ -185,8 +185,8 @@
 						</blockquote>
 					</div>
 				</div>
-				<p class="tbCode_tps">每个淘宝ID限领一张代金券<br>
-（领取时间至8月1日截止）</p>
+				<p class="tbCode_tps"><img src="/src/img/codetps.png" width="100%"><!-- 每个淘宝ID限领一张代金券<br>
+（领取时间至8月1日截止） --></p>
 
 			</div>
 
