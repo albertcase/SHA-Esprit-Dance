@@ -148,4 +148,8 @@ class SiteController extends Controller {
 		$this->redirect($callback);
 	}
 
+	public function resultAction() {
+		$this->render("result");
+	}
+
 }

@@ -16,4 +16,5 @@ $routers['/api/ballot'] = array('EspritBundle\Api', 'ballot');
 $routers['/api/share'] = array('EspritBundle\Api', 'share');
 $routers['/test/%'] = array('EspritBundle\Site', 'test');
 $routers['/login/%'] = array('EspritBundle\Site', 'login');
+$routers['/result'] = array('EspritBundle\Site', 'result');
 //$routers['/'] = array('EspritBundle\Site', 'index');

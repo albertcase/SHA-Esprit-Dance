@@ -34,11 +34,24 @@ require(['css!style/style', 'jquery', 'form'], function (_css, $, f) {
 		$(this).addClass("disable");
 		f.check(telInput, codesInput, $(this));
 	})
+
+	$("#djqLink").on("click", function(){
+		f.resultFun();
+	})
+
+	shareArr["_callback"] = function(){
+		f.resultFun();
+	}
+
 });
 
 
 //http://espritdance.samesamechina.com/video/d12349534fde6881200427840cf2d6fd
 //http://espritdance.samesamechina.com/callback?openid=xxx
+
+
+//http://espritdance.samesamechina.com/login/123123
+//http://espritdance.samesamechina.com/video/bd66fcbc63ffa46c72baa52793656f6d
 
 
 

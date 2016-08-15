@@ -70,6 +70,7 @@ define(["_public"],function(_p) {
 
         $(".loading").fadeOut("100");
 
+
     },
     checkedFun: function(obj){
         var self = this;
@@ -170,6 +171,13 @@ define(["_public"],function(_p) {
   },
   shareTips: function(){
       $(".shareTips").fadeIn("100");
+  },
+  resultFun: function(){
+      $(".shareTips").hide();
+      $("#home").hide();
+      $("#video").hide();
+      $("#result").show();
+      $("#dreambox").addClass("resultbg");
   }
 
   }

@@ -95,6 +95,7 @@ define(function(require, exports, module) {
         this.wxshareFun();
     },
     wxshareFun: function(){  //分享信息重置函数
+        var self = this;
         wx.ready(function () {
             // 在这里调用 API
             // 2. 分享接口
@@ -109,6 +110,14 @@ define(function(require, exports, module) {
                 },
                 success: function (res) {
                     _hmt.push(['_trackEvent', 'share', 'ShareAppMessage']);
+
+                    self.ajaxfun("POST", "/api/share", {"id": vid}, "json", function(data){
+                        console.log(data);
+                    });
+
+                    setTimeout(function(){
+                        shareArr["_callback"]();     //跳转在延迟200ms后执行
+                    }, 100)
                     //  alert('已分享');
                 },
                 cancel: function (res) {
@@ -131,6 +140,15 @@ define(function(require, exports, module) {
                 },
                 success: function (res) {
                     _hmt.push(['_trackEvent', 'share', 'ShareTimeline']);
+
+                    self.ajaxfun("POST", "/api/share", {"id": vid}, "json", function(data){
+                        console.log(data);
+                    });
+
+                    setTimeout(function(){
+                        shareArr["_callback"]();     //跳转在延迟200ms后执行
+                    }, 100)
+                    
                     // alert('已分享');
                 },
                 cancel: function (res) {
